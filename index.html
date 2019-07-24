@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,58 +9,91 @@
 
 
     <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/2.0.0/handlebars.min.js"></script>
+    <script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/2.0.0/handlebars.min.js"></script>
 
 
-    
+
 </head>
+
 <body>
-    
+
     <h1>hello world</h1>
 
-    <h2>open the console to see a list of 10 doctors in orando fl</h2>
+    <h2>click the button to see a list of 10 doctors in orando fl</h2>
+
+    <div id = "docs-appear-here"></div>
+
+    <button id="clickme">CLICK ME</button>
 
 
 
 
-<script>
+    <script id="docs-template">
 
 
 
-var api_key = '3100b109c4a9e2fdf5b47a749eb32965'; 
+        var api_key = '3100b109c4a9e2fdf5b47a749eb32965';
 
-var doctor_location = 'fl-orlando';
+        var doctor_location = 'fl-orlando';
 
-var user_location = '28.493873%2C%20-81.597213';
+        var user_location = '28.493873%2C%20-81.597213';
 
-var resource_url = 'https://api.betterdoctor.com/2016-03-01/doctors?location=' + doctor_location + '&user_location=' + user_location + '&skip=0&limit=10&user_key=' + api_key;
-
-$.ajax({
-        url: resource_url,
-        method: "GET"
-    }).then(function (response) {
-
-
-console.log(response);
-
-// should show first doctors full name 
-
-console.log(response.data[0].profile.first_name + " " + response.data[0].profile.last_name);
-
-console.log("---------------------")
-
-// i'll put a loop so we can show a few
-
-for (let i = 0; i < 10; i++) {
-
-    console.log(response.data[i].profile.first_name + " " + response.data[i].profile.last_name);
-
-    
-}
+        var resource_url = 'https://api.betterdoctor.com/2016-03-01/doctors?location=' + doctor_location + '&user_location=' + user_location + '&skip=0&limit=10&user_key=' + api_key;
 
 
 
-    });
+        $("#clickme").click(function () {
+
+            $(".thedocs").remove();
+
+
+
+            $.ajax({
+                url: resource_url,
+                method: "GET"
+            }).then(function (response) {
+
+
+                console.log(response);
+
+                // should show first doctors full name 
+
+                console.log(response.data[0].profile.first_name + " " + response.data[0].profile.last_name);
+
+                console.log("---------------------")
+
+
+                // i'll put a loop so we can show a few
+
+                for (let i = 0; i < 10; i++) {
+
+
+                    var doctor_name = response.data[i].profile.first_name + " " + response.data[i].profile.last_name;
+
+
+                    console.log(doctor_name);
+
+                    var showDiv = $("<div>");
+
+
+                    var p = $("<p class = 'thedocs' >").text("doc: " + doctor_name);
+
+                        showDiv.append(p);
+
+
+                        $("#docs-appear-here").prepend(showDiv);
+
+
+                }
+
+
+
+            });
+
+
+
+        });
 
 
 
@@ -84,9 +118,15 @@ for (let i = 0; i < 10; i++) {
 
 
 
-</script>
+
+
+
+
+
+    </script>
 
 
 
 </body>
+
 </html>
