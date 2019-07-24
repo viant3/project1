@@ -1,29 +1,88 @@
 <!DOCTYPE html>
 
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Project 1</title>
+    <!-- working title -->
+    <title>Doc Ad Hoc</title>
+    <!-- including bootstrap just for the 'container' class & its grid -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
 </head>
+
 <body>
-    
-<h1>hello team</h1>
+    <div class="container">
+
+        <!-- Page header -->
+        <h1>Doc Ad Hoc</h1>
+        <h4>find high quality doctors available in your area</h4>
 
 
+        <hr>
+        <!-- user input card -->
+        <!-- id say work on the functionality for this section, and then once we get that working we can add an "OR search by name" query section  -->
+        <form>
+            <div class="form-row">
+                <div class="col">
+                    <label for="insuranceprovider">Insurance Provider</label>
+                    <!-- id="provider-input" -->
+                    <input type="provider" class="form-control" id="provider-input">
+                </div>
+
+                <div class="col">
+                    <label for="zipcode">Zip Code</label>
+                    <!-- id="zipcode-input" -->
+                    <input type="zipcode" class="form-control" id="zipcode-input">
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="col">
+                    <!-- drop down form *might* be the best format for this depending on how many specialities are offered by the API -->
+                    <label for="specialty">Specialty</label>
+                    <!-- id="specialty-input" -->
+                    <select class="form-control" id="specialty-input">
+                        <!-- examples -->
+                        <option>Dermatology</option>
+                        <option>Oncology</option>
+                        <option>Dentistry</option>
+                        <option>Orthopedic Surgery</option>
+                        <option>Ear, Nose & Throat</option>
+                    </select>
+                </div>
+
+                <div class="col">
+                        <label for="submit">Find Your Doctor!</label>
+                        <br>
+                    <button type="submit" class="btn btn-primary" id="submit-btn">Submit</button>
+                </div>
+            </div>
+
+        </form>
+
+
+
+
+
+
+
+
+
+        <hr>
+        <!-- results & map display card -->
+
+
+
+
+
+    </div>
+    <!-- plug jquery and custom script here -->
+    <!-- <script></script>
+<script></script> -->
 </body>
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title></title>
-        <meta name="description" content="">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="">
-    </head>
-    <body>
-      
-        
-    </body>
 
 </html>
