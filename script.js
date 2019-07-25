@@ -71,7 +71,49 @@ $("#clickme").click(function () {
 });
 
 
+// this is going to run when you click a second time mkay
 
+$("#clickme").click(function () {
+
+    event.preventDefault();
+
+
+    var resource_url = "https://api.betterdoctor.com/2016-03-01/insurances?user_key=3100b109c4a9e2fdf5b47a749eb32965"
+
+
+    $(".thedocs").remove();
+
+
+
+    $.ajax({
+        url: resource_url,
+        method: "GET"
+    }).then(function (response) {
+
+        console.log("this is the insurance stuff")
+
+        console.log(response);
+
+// finna see if i can output the amerihealth plans
+
+
+        for (let i = 0; i < 4; i++) {
+
+
+            console.log(response.data[0].plans[i].uid);
+
+
+
+
+        }
+
+
+
+    });
+
+
+
+});
 
 
 
