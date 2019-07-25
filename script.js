@@ -14,6 +14,9 @@ var resource_url = 'https://api.betterdoctor.com/2016-03-01/doctors?location=' +
 
 $("#clickme").click(function () {
 
+    event.preventDefault();
+
+
     $(".thedocs").remove();
 
 
