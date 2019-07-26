@@ -48,7 +48,7 @@ $("#clickme").click(function () {
 
     console.log(doctor_state);
 
-    var doctor_city = $("#city-input").val().trim().toLowerCase();
+    var doctor_city = $("#city-input").val().trim().replace(' ', '-').toLowerCase();
 
     console.log(doctor_city);
 
