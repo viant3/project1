@@ -1,4 +1,7 @@
 
+// this is just outputting plans so we can copy paste them
+
+
 var resource_url = "https://api.betterdoctor.com/2016-03-01/insurances?user_key=3100b109c4a9e2fdf5b47a749eb32965"
 
 
