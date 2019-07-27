@@ -63,7 +63,7 @@ var insurance = $("#provider-input option:selected").val().toLowerCase();
 
     // user location
 
-    var user_location = '28.493873%2C%20-81.597213';
+    var user_location = '';
 
     // this is the resource url we are using for the CLICK ONLY
 
@@ -111,6 +111,8 @@ var insurance = $("#provider-input option:selected").val().toLowerCase();
             // I did the variable below this way just to save us from needing another variable
             var doctor_img = $("<img class = 'thedocs' src=" + response.data[i].profile.image_url + ">");
 
+            // gonna get some addy stuff
+=======
             console.log(doctor_name);
 
             var showDiv = $("<div>");
@@ -129,7 +131,15 @@ var insurance = $("#provider-input option:selected").val().toLowerCase();
         }
 
 
+            var doctor_address_city = response.data[i].practices[0].visit_address.city; 
+            var doctor_address_state = response.data[i].practices[0].visit_address.state; 
+            var doctor_address_street = response.data[i].practices[0].visit_address.street; 
+            var doctor_address_zip = response.data[i].practices[0].visit_address.zip; 
+            var doctor_address_full = (doctor_address_city + " " + doctor_address_state + " " + doctor_address_street + " " + doctor_address_zip );
+            var doctor_address_url = doctor_address_full.replace(/\s+/g, '+')
 
+
+=======
     })
 
     // var location = 
@@ -156,47 +166,52 @@ var insurance = $("#provider-input option:selected").val().toLowerCase();
 
     // .then(function () {
 
-    //     event.preventDefault();
-
-
-    //     var resource_url = "https://api.betterdoctor.com/2016-03-01/insurances?user_key=3100b109c4a9e2fdf5b47a749eb32965"
-
-
-    //     $.ajax({
-    //         url: resource_url,
-    //         method: "GET"
-    //     }).then(function (response) {
-
-    //         console.log("this is the insurance stuff")
-
-    //         console.log(response);
-
-    // // finna see if i can output the amerihealth plans
-
-
-    //         for (let i = 0; i < 4; i++) {
-
-
-    //             var plans = response.data[0].plans[i].uid + ",";
-
-    //             var plansString = JSON.stringify(plans);
-
-    //             console.log(plansString);
 
 
 
-    //         }
+            console.log(doctor_name);
+            console.log(doctor_img);
+
+        // console.log("THIS WILL SHOW ONE CITY " + doctor_address_city);
+        // console.log("THIS WILL SHOW ONE STATE " + doctor_address_state);
+        // console.log("THIS WILL SHOW ONE street " + doctor_address_street);
+        // console.log("THIS WILL SHOW ONE zip " + doctor_address_zip);
+        console.log(doctor_address_full);
+        console.log(doctor_address_url);
+        var lat = response.data[i].practices[0].lat;
+        var lon = response.data[i].practices[0].lat;
+        console.log(lat);
+        console.log(lon);
 
 
 
-    //     });
+
+
+        
 
 
 
-    // });
+
+
+            var showDiv = $("<div>");
+
+
+            var p = $("<p class = 'thedocs' >").text("doc: " + doctor_name);
+
+            showDiv.append(doctor_img);
+            showDiv.append(p);
+            
+
+
+            $("#docs-appear-here").append(showDiv);
+
+
+        }
 
 
 
+    })
+    
 
 
 
@@ -209,6 +224,7 @@ var insurance = $("#provider-input option:selected").val().toLowerCase();
 
 
 
+// google API Key: AIzaSyAxqUekZhoGLhnTT57LPgjezVUPWx02C0M
 
 
 
