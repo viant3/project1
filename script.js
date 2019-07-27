@@ -131,7 +131,14 @@ var insurance = $("#provider-input option:selected").val().toLowerCase();
         // console.log("THIS WILL SHOW ONE street " + doctor_address_street);
         // console.log("THIS WILL SHOW ONE zip " + doctor_address_zip);
         console.log(doctor_address_full);
-        console.log(doctor_address_url);git che
+        console.log(doctor_address_url);
+        var lat = response.data[i].practices[0].lat;
+        var lon = response.data[i].practices[0].lat;
+        console.log(lat);
+        console.log(lon);
+
+
+
 
 
         
