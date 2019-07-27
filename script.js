@@ -131,7 +131,28 @@ var insurance = $("#provider-input option:selected").val().toLowerCase();
 
 
     })
+
+    // var location = 
     
+    // var resource_url = "https://www.google.com/maps/embed/v1/streetview?key=" YOUR_API_KEY
+    // "&location=" 46.414382,10.013988
+    // "&heading=" 210
+    // "&pitch=" 10
+    // "&fov=" 35;
+
+    // $.ajax({
+    //     url: resource_url,
+    //     method: "GET"
+    // }).then(function (response) {
+
+
+    //     console.log(response);
+
+    //     for (let i = 0; i < response.data.length; i++) {
+
+    //     }
+
+    // });
 
     // .then(function () {
 
