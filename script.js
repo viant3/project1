@@ -1,4 +1,3 @@
-
 var resource_url = "https://api.betterdoctor.com/2016-03-01/insurances?user_key=3100b109c4a9e2fdf5b47a749eb32965"
 
 
@@ -39,6 +38,7 @@ $.ajax({
 $("#clickme").click(function () {
 
     event.preventDefault();
+  
 
     var api_key = '3100b109c4a9e2fdf5b47a749eb32965';
 
@@ -48,7 +48,7 @@ $("#clickme").click(function () {
 
     console.log(doctor_state);
 
-    var doctor_city = $("#city-input").val().trim().toLowerCase();
+    var doctor_city = $("#city-input").val().trim().replace(' ', '-').toLowerCase();
 
     console.log(doctor_city);
 
@@ -108,6 +108,8 @@ var insurance = $("#provider-input option:selected").val().toLowerCase();
 
             var doctor_name = response.data[i].profile.first_name + " " + response.data[i].profile.last_name;
 
+            // I did the variable below this way just to save us from needing another variable
+            var doctor_img = $("<img class = 'thedocs' src=" + response.data[i].profile.image_url + ">");
 
             console.log(doctor_name);
 
@@ -116,7 +118,9 @@ var insurance = $("#provider-input option:selected").val().toLowerCase();
 
             var p = $("<p class = 'thedocs' >").text("doc: " + doctor_name);
 
+            showDiv.append(doctor_img);
             showDiv.append(p);
+            
 
 
             $("#docs-appear-here").append(showDiv);
@@ -127,6 +131,7 @@ var insurance = $("#provider-input option:selected").val().toLowerCase();
 
 
     })
+    
 
     // .then(function () {
 
@@ -180,7 +185,6 @@ var insurance = $("#provider-input option:selected").val().toLowerCase();
 
 
 });
-
 
 
 
