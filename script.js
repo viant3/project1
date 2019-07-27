@@ -112,7 +112,7 @@ var insurance = $("#provider-input option:selected").val().toLowerCase();
             var doctor_img = $("<img class = 'thedocs' src=" + response.data[i].profile.image_url + ">");
 
             // gonna get some addy stuff
-=======
+
             console.log(doctor_name);
 
             var showDiv = $("<div>");
@@ -139,7 +139,7 @@ var insurance = $("#provider-input option:selected").val().toLowerCase();
             var doctor_address_url = doctor_address_full.replace(/\s+/g, '+')
 
 
-=======
+
     })
 
     // var location = 
