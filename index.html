@@ -41,7 +41,16 @@
                     <div class="col-6">
                         <label for="insuranceprovider">Insurance Provider</label>
                         <!-- id="provider-input" -->
-                        <input type="provider" class="form-control" id="provider-input">
+                        <select type="provider" class="form-control" id="provider-input">
+
+                            <option value="amerihealth-amerihealthregionalprefntwkhmohmopos,
+                            amerihealth-amerihealthlocalvaluenetworkepoposppo,
+                            amerihealth-amerihealthlocalvaluenetworkhmohmopos,
+                            amerihealth-amerihealthregionalprefntwkepoposppo">Amerihealth</option>
+
+
+
+                        </select>
 
                     </div>
 
@@ -120,13 +129,16 @@
                         <select class="form-control" id="specialty-input">
                             <!-- examples -->
                             <!-- ADD VALUES once we establish the full list -->
-                            <option>Dermatology</option>
-                            <option>Oncology</option>
-                            <option>Dentistry</option>
-                            <option>Orthopedic Surgery</option>
-                            <option>Ear, Nose & Throat</option>
+                            <option value="">Show All</option>
+
+                            <option value="dermatologist">Dermatology</option>
+                            <option value="oncologist">Oncology</option>
+                            <option value="orthodontist">Dentistry</option>
+                            <option value="orthopedic-surgeon">Orthopedic Surgery</option>
+                            <option value="ear-nose-throat-doctor">Ear, Nose & Throat</option>
                         </select>
                     </div>
+
 
                     <div class="col">
                         <label for="submit">Find Your Doctor!</label>
@@ -150,11 +162,15 @@
                             <table class="table">
 
                                 <tr>
-                                    <th>Insurance Provider</th>
-                                    <th>Specialty</th>
                                     <th>Name</th>
-                                    <th>City</th>
-                                    <th>State</th>
+                                    <th>Title</th>
+                                    
+                                    <th>Address</th>
+                                    <th>Map</th>
+
+
+
+            
                                 </tr>
 
                             </table>
@@ -167,7 +183,7 @@
 
 
 
-=======
+
         <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
         <script type="text/javascript"
             src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/2.0.0/handlebars.min.js"></script>
