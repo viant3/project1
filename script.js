@@ -113,58 +113,12 @@ var insurance = $("#provider-input option:selected").val().toLowerCase();
 
             // gonna get some addy stuff
 
-            console.log(doctor_name);
-
-            var showDiv = $("<div>");
-
-
-            var p = $("<p class = 'thedocs' >").text("doc: " + doctor_name);
-
-            showDiv.append(doctor_img);
-            showDiv.append(p);
-            
-
-
-            $("#docs-appear-here").append(showDiv);
-
-
-        }
-
-
             var doctor_address_city = response.data[i].practices[0].visit_address.city; 
             var doctor_address_state = response.data[i].practices[0].visit_address.state; 
             var doctor_address_street = response.data[i].practices[0].visit_address.street; 
             var doctor_address_zip = response.data[i].practices[0].visit_address.zip; 
             var doctor_address_full = (doctor_address_city + " " + doctor_address_state + " " + doctor_address_street + " " + doctor_address_zip );
             var doctor_address_url = doctor_address_full.replace(/\s+/g, '+')
-
-
-
-    })
-
-    // var location = 
-    
-    // var resource_url = "https://www.google.com/maps/embed/v1/streetview?key=" YOUR_API_KEY
-    // "&location=" 46.414382,10.013988
-    // "&heading=" 210
-    // "&pitch=" 10
-    // "&fov=" 35;
-
-    // $.ajax({
-    //     url: resource_url,
-    //     method: "GET"
-    // }).then(function (response) {
-
-
-    //     console.log(response);
-
-    //     for (let i = 0; i < response.data.length; i++) {
-
-    //     }
-
-    // });
-
-    // .then(function () {
 
 
 
