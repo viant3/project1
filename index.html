@@ -8,14 +8,17 @@
 
     <!-- working title -->
     <title>Doc Ad Hoc</title>
-    <!-- including bootstrap just for the 'container' class & its grid -->
+
+    <!-- font awesome icons -->
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"
+        integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+   
+        <!-- including bootstrap just for the 'container' class & its grid -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-   
-        <!-- font awesome icons -->
-   <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
 
-   <!-- custom css -->
+
+    <!-- custom css -->
     <link rel="stylesheet" href="style.css">
 
     <!-- fonts -->
@@ -26,122 +29,132 @@
 <body>
 
 
-<!-- As a heading -->
-<nav class="navbar navbar-light bg-light">
-    <span class="navbar-brand h1">Doc Ad Hoc</span>
-    <span class="navbar-text">
-       Find high quality doctors available in your area!
-      </span>
-  </nav>
+    <!-- As a heading -->
 
     <div class="container">
 
-      
+        <nav class="navbar navbar-light bg-light">
+            <span class="navbar-brand h1">The Doctor Is In!</span>
+           
+
+            <span class="navbar-text">
+                Find high quality doctors available in your area
+            </span>
+        </nav>
 
 
-        <hr>
-        <!-- user input card -->
-        <!-- id say work on the functionality for this section, and then once we get that working we can add an "OR search by name" query section  -->
-        <form>
-            <div class="form-row">
-                <div class="col-6">
-                    <label for="insuranceprovider">Insurance Provider</label>
-                    <!-- id="provider-input" -->
-                    <input type="provider" class="form-control" id="provider-input">
-                   
+        <div class="jumbotron">
+
+
+
+            <hr>
+            <!-- user input card -->
+            <!-- id say work on the functionality for this section, and then once we get that working we can add an "OR search by name" query section  -->
+            <form>
+                <div class="form-row">
+                    <div class="col-6">
+                        <label for="insuranceprovider">Insurance Provider</label>
+                        <!-- id="provider-input" -->
+                        <input type="provider" class="form-control" id="provider-input">
+
+                    </div>
+
+                    <div class="col-3">
+                        <label for="city">City</label>
+                        <!-- id="city-input" -->
+                        <input type="city" class="form-control" id="city-input">
+                    </div>
+                    <div class="col-3">
+                        <label for="state">State</label>
+                        <!-- id="state-input" -->
+                        <select class="form-control" id="state-input">
+                            <!-- examples -->
+                            <option value="AK">Alaska</option>
+                            <option value="AL">Alabama</option>
+                            <option value="AR">Arkansas</option>
+                            <option value="AZ">Arizona</option>
+                            <option value="CA">California</option>
+                            <option value="CO">Colorado</option>
+                            <option value="CT">Connecticut</option>
+                            <option value="DC">District of Columbia</option>
+                            <option value="DE">Delaware</option>
+                            <option value="FL">Florida</option>
+                            <option value="GA">Georgia</option>
+                            <option value="HI">Hawaii</option>
+                            <option value="IA">Iowa</option>
+                            <option value="ID">Idaho</option>
+                            <option value="IL">Illinois</option>
+                            <option value="IN">Indiana</option>
+                            <option value="KS">Kansas</option>
+                            <option value="KY">Kentucky</option>
+                            <option value="LA">Louisiana</option>
+                            <option value="MA">Massachusetts</option>
+                            <option value="MD">Maryland</option>
+                            <option value="ME">Maine</option>
+                            <option value="MI">Michigan</option>
+                            <option value="MN">Minnesota</option>
+                            <option value="MO">Missouri</option>
+                            <option value="MS">Mississippi</option>
+                            <option value="MT">Montana</option>
+                            <option value="NC">North Carolina</option>
+                            <option value="ND">North Dakota</option>
+                            <option value="NE">Nebraska</option>
+                            <option value="NH">New Hampshire</option>
+                            <option value="NJ">New Jersey</option>
+                            <option value="NM">New Mexico</option>
+                            <option value="NV">Nevada</option>
+                            <option value="NY">New York</option>
+                            <option value="OH">Ohio</option>
+                            <option value="OK">Oklahoma</option>
+                            <option value="OR">Oregon</option>
+                            <option value="PA">Pennsylvania</option>
+                            <option value="PR">Puerto Rico</option>
+                            <option value="RI">Rhode Island</option>
+                            <option value="SC">South Carolina</option>
+                            <option value="SD">South Dakota</option>
+                            <option value="TN">Tennessee</option>
+                            <option value="TX">Texas</option>
+                            <option value="UT">Utah</option>
+                            <option value="VA">Virginia</option>
+                            <option value="VT">Vermont</option>
+                            <option value="WA">Washington</option>
+                            <option value="WI">Wisconsin</option>
+                            <option value="WV">West Virginia</option>
+                            <option value="WY">Wyoming</option>
+                        </select>
+                    </div>
+
                 </div>
 
-                <div class="col-3">
-                    <label for="city">City</label>
-                    <!-- id="city-input" -->
-                    <input type="city" class="form-control" id="city-input">
-                </div>
-                <div class="col-3">
-                    <label for="state">State</label>
-                    <!-- id="state-input" -->
-                    <select class="form-control" id="state-input">
-                        <!-- examples -->
-                        <option value="AK">Alaska</option>
-                        <option value="AL">Alabama</option>
-                        <option value="AR">Arkansas</option>
-                        <option value="AZ">Arizona</option>
-                        <option value="CA">California</option>
-                        <option value="CO">Colorado</option>
-                        <option value="CT">Connecticut</option>
-                        <option value="DC">District of Columbia</option>
-                        <option value="DE">Delaware</option>
-                        <option value="FL">Florida</option>
-                        <option value="GA">Georgia</option>
-                        <option value="HI">Hawaii</option>
-                        <option value="IA">Iowa</option>
-                        <option value="ID">Idaho</option>
-                        <option value="IL">Illinois</option>
-                        <option value="IN">Indiana</option>
-                        <option value="KS">Kansas</option>
-                        <option value="KY">Kentucky</option>
-                        <option value="LA">Louisiana</option>
-                        <option value="MA">Massachusetts</option>
-                        <option value="MD">Maryland</option>
-                        <option value="ME">Maine</option>
-                        <option value="MI">Michigan</option>
-                        <option value="MN">Minnesota</option>
-                        <option value="MO">Missouri</option>
-                        <option value="MS">Mississippi</option>
-                        <option value="MT">Montana</option>
-                        <option value="NC">North Carolina</option>
-                        <option value="ND">North Dakota</option>
-                        <option value="NE">Nebraska</option>
-                        <option value="NH">New Hampshire</option>
-                        <option value="NJ">New Jersey</option>
-                        <option value="NM">New Mexico</option>
-                        <option value="NV">Nevada</option>
-                        <option value="NY">New York</option>
-                        <option value="OH">Ohio</option>
-                        <option value="OK">Oklahoma</option>
-                        <option value="OR">Oregon</option>
-                        <option value="PA">Pennsylvania</option>
-                        <option value="PR">Puerto Rico</option>
-                        <option value="RI">Rhode Island</option>
-                        <option value="SC">South Carolina</option>
-                        <option value="SD">South Dakota</option>
-                        <option value="TN">Tennessee</option>
-                        <option value="TX">Texas</option>
-                        <option value="UT">Utah</option>
-                        <option value="VA">Virginia</option>
-                        <option value="VT">Vermont</option>
-                        <option value="WA">Washington</option>
-                        <option value="WI">Wisconsin</option>
-                        <option value="WV">West Virginia</option>
-                        <option value="WY">Wyoming</option>
-                    </select>
+                <div class="form-row">
+                    <div class="col">
+                        <!-- drop down form *might* be the best format for this depending on how many specialities are offered by the API -->
+                        <label for="specialty">Specialty</label>
+                        <!-- id="specialty-input" -->
+                        <select class="form-control" id="specialty-input">
+                            <!-- examples -->
+                            <!-- ADD VALUES once we establish the full list -->
+                            <option>Dermatology</option>
+                            <option>Oncology</option>
+                            <option>Dentistry</option>
+                            <option>Orthopedic Surgery</option>
+                            <option>Ear, Nose & Throat</option>
+                        </select>
+                    </div>
+
+                    <div class="col">
+                        <label for="submit">Find Your Doctor!</label>
+                        <i class="fa fa-user-md"></i>
+                        <i class="fa fa-search"></i>
+                        <br>
+                        <button type="submit" class="btn btn-primary" id="clickme">Submit</button>
+                    </div>
                 </div>
 
-            </div>
+            </form>
 
-            <div class="form-row">
-                <div class="col">
-                    <!-- drop down form *might* be the best format for this depending on how many specialities are offered by the API -->
-                    <label for="specialty">Specialty</label>
-                    <!-- id="specialty-input" -->
-                    <select class="form-control" id="specialty-input">
-                        <!-- examples -->
-                        <!-- ADD VALUES once we establish the full list -->
-                        <option>Dermatology</option>
-                        <option>Oncology</option>
-                        <option>Dentistry</option>
-                        <option>Orthopedic Surgery</option>
-                        <option>Ear, Nose & Throat</option>
-                    </select>
-                </div>
 
-                <div class="col">
-                    <label for="submit">Find Your Doctor!</label>
-                    <br>
-                    <button type="submit" class="btn btn-primary" id="clickme">Submit</button>
-                </div>
-            </div>
-
-        </form>
+        </div>
 
 
 
@@ -176,18 +189,18 @@
 
 
 
-  
 
 
 
 
-    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-    <script type="text/javascript"
-        src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/2.0.0/handlebars.min.js"></script>
+
+        <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+        <script type="text/javascript"
+            src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/2.0.0/handlebars.min.js"></script>
         <script src="script.js"></script>
 
     </div>
- 
+
 </body>
 
 </html>
