@@ -106,10 +106,16 @@ var insurance = $("#provider-input option:selected").val().toLowerCase();
 
 
 
+
+
             var doctor_name = response.data[i].profile.first_name + " " + response.data[i].profile.last_name;
 
             // I did the variable below this way just to save us from needing another variable
-            var doctor_img = $("<img class = 'thedocs' src=" + response.data[i].profile.image_url + ">");
+
+
+
+            
+            var doctor_img = $(" <td> <img class = 'thedocs' src=" + response.data[i].profile.image_url + ">");
 
             // gonna get some addy stuff
 
@@ -141,23 +147,20 @@ var insurance = $("#provider-input option:selected").val().toLowerCase();
 
 
 
-        
+
+            var tr= $("<tr>");
 
 
+            var docTd = $("<td class = 'thedocs' >").text("doc: " + doctor_name);
+
+           
+            tr.append(docTd).append(doctor_img);
 
 
-
-            var showDiv = $("<div>");
-
-
-            var p = $("<p class = 'thedocs' >").text("doc: " + doctor_name);
-
-            showDiv.append(doctor_img);
-            showDiv.append(p);
             
 
 
-            $("#docs-appear-here").append(showDiv);
+            $(".table").append(tr);
 
 
         }
