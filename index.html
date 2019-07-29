@@ -23,9 +23,9 @@
     <link rel="stylesheet" href="style.css">
 
     <!-- fonts -->
-    <link href="https://fonts.googleapis.com/css?family=Poppins&display=swap" rel="stylesheet"> 
+    <link href="https://fonts.googleapis.com/css?family=Poppins&display=swap" rel="stylesheet">
 
-   
+
 
 
 </head>
@@ -33,25 +33,26 @@
 <body>
 
     <nav class="navbar">
-       
+
         <div class="container">
- 
-        <span class="navbar-brand navtext">the doctor is in! <i class="fa fa-user-md" style="font-size:36px"></i></span>
-        <span class="navbar-text navtext">
-            find local medical experts in your area!
-        </span>
-    </div>
+
+            <span class="navbar-brand navtext">the doctor is in! <i class="fa fa-user-md"
+                    style="font-size:36px"></i></span>
+            <span class="navbar-text navtext">
+                find local medical experts in your area!
+            </span>
+        </div>
     </nav>
 
     <div class="container">
-   
+
         <!-- Page header -->
         <div id="contents" class="jumbotron">
 
-                <h4>doctor search <i class="fa fa-search" style="font-size:24px"></i></h4>
+            <h4>doctor search <i class="fa fa-search" style="font-size:24px"></i></h4>
 
-                <hr>
-        
+            <hr>
+
 
             <!-- user input card -->
             <!-- id say work on the functionality for this section, and then once we get that working we can add an "OR search by name" query section  -->
@@ -66,8 +67,8 @@
                             amerihealth-amerihealthlocalvaluenetworkepoposppo,
                             amerihealth-amerihealthlocalvaluenetworkhmohmopos,
                             amerihealth-amerihealthregionalprefntwkepoposppo">Amerihealth</option>
-                            
-                            <option value ="aetna-aetnasignatureadministratorsppo,
+
+                            <option value="aetna-aetnasignatureadministratorsppo,
                             aetna-aetnaadvantage6350hix,
                             aetna-aetnasavingsplusofaz,
                             aetna-aetnadmo,
@@ -89,7 +90,7 @@
                             aetna-aetnavitalidadpluscaconaetna,  
                             aetna-aetnachoiceposopenaccess,
                             aetna-aetnamdbronzesilverandgoldhmo,">Aetna</option>
-                            
+
                             <option value="anthem-antheminpathwayxbronzedirectcacahix, 
                             anthem-anthemcopathwayxenhancedinddirectaccess, 
                             anthem-anthemohpathwayxtieredhospinddirectaccess, 
@@ -127,7 +128,7 @@
                             bluecrosscalifornia-bluecrosscapathwayxtiereddirectaccess, 
                             anthem-anthempathwayxtierhosphealthkeepersdirectaccessva, 
                             anthem-anthemppo">Anthem</option>
-                       
+
                             <option value="healthnet-healthnetcaindividualfamilyppo,
                             healthnet-healthnetcacoveredcaliforniapposmallgroup,
                             healthnet-healthnetazppopos,
@@ -146,14 +147,14 @@
                             healthnet-healthnetcacommunitycarenetworkhmo,
                             healthnet-healthnetcahmoemployergroup,
                             healthnet-healthnetorppo">
-                            Healthnet</option>
+                                Healthnet</option>
 
                             <option value="unitedhealthcare-uhcoptionsppo, 
                             unitedhealthcare-uhcnavigatehmo, 
                             unitedhealthcare-uhcmedicachoice, 
                             unitedhealthcare-uhcnavigatepos, 
                             unitedhealthcare-uhcchoicepluspos">
-                            United Healthcare</option>
+                                United Healthcare</option>
 
                             <option value="humana-humanawacohmoxhix,
                             humana-humanatampabaycorenet,
@@ -186,15 +187,25 @@
                             cigna-cignaopenaccessplus,
                             cigna-cignalocalplus,
                             cigna-vision">
-                            Cigna
+                                Cigna
                             </option>
 
+                            <option value="bluecrossblueshieldofgeorgia-bcbsgadirectaccesswhsa, 
+                            bluecrossblueshieldofgeorgia-bcbsgabluechoiceppo, 
+                            bluecrossblueshieldofgeorgia-bcbsgablueopenaccesspos, 
+                            bluecrossblueshieldofgeorgia-bcbsgadentalcomplete, 
+                            bluecrossblueshieldofgeorgia-bcbsgabluechoicehmo, 
+                            bluecrossblueshieldofgeorgia-bcbsgabluechoiceoptionpos">
+                                Blue Cross Blue Shield Georgia</option>
+
+
+
                         </select>
-                        
+
 
                     </div>
 
-                    <div class="col-3">
+                    <div class=col-3">
                         <label for="city">City</label>
                         <!-- id="city-input" -->
                         <input type="city" class="form-control" id="city-input">
@@ -279,6 +290,8 @@
                             <option value="pedatrician">Pediatrics</option>
                             <option value="podiatrist">Podiatry</option>
                             <option value="mental-health-counselor">Mental Health Counseling</option>
+                            <option value="acupuncturist">Acupuncture</option>
+
 
                         </select>
                     </div>
@@ -293,7 +306,7 @@
         </div>
 
 
-        
+
         <div class="row">
             <div class="col">
                 <div class="card">
@@ -306,7 +319,7 @@
                         <table class="table text-center align-middle">
 
                             <tr>
-                             
+
                             </tr>
 
                         </table>
@@ -317,7 +330,7 @@
                     <!-- testing the collapse menu -->
 
 
-        </div>
+                </div>
 
 
 
@@ -326,18 +339,21 @@
 
 
 
-        <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-        <script type="text/javascript"
-            src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/2.0.0/handlebars.min.js"></script>
+                <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+                <script type="text/javascript"
+                    src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/2.0.0/handlebars.min.js"></script>
 
 
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-            integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
-            crossorigin="anonymous"></script>
+                <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+                    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+                    crossorigin="anonymous"></script>
 
 
+                <script
+                    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAxqUekZhoGLhnTT57LPgjezVUPWx02C0M&callback=myMap"></script>
 
-        <script src="script.js"></script>
+
+                <script src="script.js"></script>
 
 
 
