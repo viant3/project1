@@ -122,6 +122,8 @@ $("#clickme").click(function () {
             $(".thedocs").remove();
             $(".thedocsTR").remove();
 
+            console.log(response);
+
 
 
 
@@ -153,6 +155,8 @@ $("#clickme").click(function () {
                 var doctor_address_zip = response.data[i].practices[0].visit_address.zip;
                 var doctor_address_full = (doctor_address_city + " " + doctor_address_state + " " + doctor_address_street + " " + doctor_address_zip);
                 var doctor_address_url = doctor_address_full.replace(/\s+/g, '+')
+                var doctor_phone = response.data[i].practices[0].phones[0].number;
+
 
 
 
@@ -170,6 +174,8 @@ $("#clickme").click(function () {
                 var lon = response.data[i].practices[0].lon;
                 console.log(lat);
                 console.log(lon);
+                console.log(doctor_phone);
+
 
 
 
@@ -183,8 +189,11 @@ $("#clickme").click(function () {
 
                 var docAddressTd = $("<td class = 'thedocsaddress' >").text(doctor_address_full);
 
+                var docPhoneTd = $("<td class = 'thedocsphone' >").text(doctor_phone);
 
-                tr.append(docTd).append(doctor_img).append(docAddressTd);
+
+
+                tr.append(docTd).append(doctor_img).append(docAddressTd).append(docPhoneTd);
 
 
 
