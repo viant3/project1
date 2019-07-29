@@ -76,10 +76,12 @@ $("#clickme").click(function () {
     console.log(resource_url);
 
 
-
+// clearing the results before 
 
     $(".thedocs").remove();
     $(".thedocsTR").remove();
+    $(".thedocsaddress").remove();
+
 
 
 
@@ -180,8 +182,10 @@ $("#clickme").click(function () {
 
                 var docTd = $("<td class = 'thedocs' >").text("doc: " + doctor_name);
 
+                var docAddressTd = $("<td class = 'thedocsaddress' >").text(doctor_address_full);
 
-                tr.append(docTd).append(doctor_img);
+
+                tr.append(docTd).append(doctor_img).append(docAddressTd);
 
 
 
