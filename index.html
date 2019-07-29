@@ -8,20 +8,47 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
     <!-- working title -->
-    <title>Doc Ad Hoc</title>
+    <title>the doctor is in!</title>
+
+    <!-- font awesome icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
     <!-- including bootstrap just for the 'container' class & its grid -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="../project1/assets/css/style.css">
 
+
+    <!-- custom css -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Poppins&display=swap" rel="stylesheet">
+
+
+
+
+
 </head>
 
 <body>
 
+    <nav class="navbar">
 
-    <br>
+        <div class="container">
+
+            <span class="navbar-brand navtext">the doctor is in! <i class="fa fa-user-md"
+                    style="font-size:36px"></i></span>
+            <span class="navbar-text navtext">
+                find local medical experts in your area!
+            </span>
+        </div>
+    </nav>
 
     <div class="container">
+
+        <!-- Page header -->
+        <div id="contents" class="jumbotron">
         <div class="jumbotron text-center">
             <h1>Your Doctor Is Here!</h1>
 
@@ -32,7 +59,12 @@
 
 
 
+            <h4>doctor search <i class="fa fa-search" style="font-size:24px"></i></h4>
 
+            <hr>
+
+
+=======
             <!-- user input card -->
             <!-- id say work on the functionality for this section, and then once we get that working we can add an "OR search by name" query section  -->
 
@@ -42,19 +74,155 @@
                         <label for="insuranceprovider">Insurance Provider</label>
                         <!-- id="provider-input" -->
                         <select type="provider" class="form-control" id="provider-input">
+=======
 
                             <option value="amerihealth-amerihealthregionalprefntwkhmohmopos,
                             amerihealth-amerihealthlocalvaluenetworkepoposppo,
                             amerihealth-amerihealthlocalvaluenetworkhmohmopos,
                             amerihealth-amerihealthregionalprefntwkepoposppo">Amerihealth</option>
 
+                            <option value="aetna-aetnasignatureadministratorsppo,
+                            aetna-aetnaadvantage6350hix,
+                            aetna-aetnasavingsplusofaz,
+                            aetna-aetnadmo,
+                            aetna-aetnahealthnetworkoptionopenaccess,       
+                            aetna-aetnahmo,     
+                            aetna-aetnachoiceposii,
+                            aetna-aetnaelectchoiceepo,
+                            aetna-aetnadppo,   
+                            aetna-aetnawholehealthprimecareoamcca,     
+                            aetna-aetnawholehealthbannerhealthnetworkhmo,        
+                            aetna-aetnabasichmo,
+                            aetna-aetnaselect,
+                            aetna-aetnasavingsplusofca,  
+                            aetna-aetnabasichix,
+                            aetna-aetnawholehealthprimecarehmoca,      
+                            aetna-aetnawholehealthcoloradofrontrange,  
+                            aetna-aetnahmodeductibleplancamembersonly,
+                            aetna-aetnamanagedchoiceposopenaccess,     
+                            aetna-aetnavitalidadpluscaconaetna,  
+                            aetna-aetnachoiceposopenaccess,
+                            aetna-aetnamdbronzesilverandgoldhmo,">Aetna</option>
+
+                            <option value="anthem-antheminpathwayxbronzedirectcacahix, 
+                            anthem-anthemcopathwayxenhancedinddirectaccess, 
+                            anthem-anthemohpathwayxtieredhospinddirectaccess, 
+                            anthem-anthembluepreferredhmo, 
+                            bluecrosscalifornia-bccadentalblue100200300, 
+                            bluecrosscalifornia-bluecrosscaadvantageppopreferreddirectaccessplus, 
+                            bluecrosscalifornia-bluecrosscappo, 
+                            bluecrosscalifornia-bluecrosscapriorityselecthmo, 
+                            bluecrosscalifornia-bluecrosscaselectplushmo, 
+                            anthem-anthempathwayxenhancedinddirectaccessnh, 
+                            anthem-anthemkeycareppo, 
+                            anthem-anthemcobluepriorityppo, 
+                            anthem-anthempathwayxindppodirectaccessct, 
+                            anthem-anthemblueaccessppo, 
+                            anthem-anthemblueopenaccesspos, 
+                            anthembluecrossblueshield-bronzedirectaccessplusgjqa, 
+                            bluecrosscalifornia-bluecrosscapathwayxppodirectaccess, 
+                            bluecrosscalifornia-bluecrosscapowerselecthmo, 
+                            bluecrosscalifornia-bluecrosscaselectppo, 
+                            anthem-anthemppocenturypreferredct, 
+                            anthembluecrossblueshield-golddirectaccesspluswhsa, 
+                            bluecrosscalifornia-bluecrosscacaliforniacarehmo, 
+                            anthem-blueviewvision, 
+                            anthem-anthemmodirectaccesswhsa, 
+                            anthem-anthemhealthkeepershmopos, 
+                            anthem-anthembluepreferredpluspos, 
+                            bluecrosscalifornia-bluecrosscapathwayxhmoguidedaccess, 
+                            anthem-anthempathwayxenhancedindguidedaccessme, 
+                            anthem-anthemwibluepriorityxindivdirectaccess, 
+                            anthem-anthemcopathway, 
+                            anthem-anthemkypathwayxinddirectaccess, 
+                            anthem-anthemnvpathwayppo, 
+                            anthem-anthemnvpathwayxhmoinddirectaccess, 
+                            anthem-anthembluepreferredselect, 
+                            bluecrosscalifornia-bluecrosscapathwayxtiereddirectaccess, 
+                            anthem-anthempathwayxtierhosphealthkeepersdirectaccessva, 
+                            anthem-anthemppo">Anthem</option>
+
+                            <option value="healthnet-healthnetcaindividualfamilyppo,
+                            healthnet-healthnetcacoveredcaliforniapposmallgroup,
+                            healthnet-healthnetazppopos,
+                            healthnet-healthnetcabluegoldhmo,
+                            healthnet-hmoexcelcaresilvernetwork,
+                            healthnet-healthnetcommunitycarenetworkhmohix,
+                            healthnet-healthnetindividualfamilyppohix,
+                            healthnet-healthnetcahmowholecarenetwork,
+                            healthnet-healthnetorcommunitycare,
+                            healthnet-healthnetazhmoexcelcarenetwork,
+                            healthnet-hmoexcelcaresilvernetworkmedicarecob,
+                            healthnet-healthnetcahmosmartcare,
+                            healthnet-healthnetcaprimaryepo,
+                            healthnet-healthnetcalargegroupppo,
+                            healthnet-bluegoldhmo,
+                            healthnet-healthnetcacommunitycarenetworkhmo,
+                            healthnet-healthnetcahmoemployergroup,
+                            healthnet-healthnetorppo">
+                                Healthnet</option>
+
+                            <option value="unitedhealthcare-uhcoptionsppo, 
+                            unitedhealthcare-uhcnavigatehmo, 
+                            unitedhealthcare-uhcmedicachoice, 
+                            unitedhealthcare-uhcnavigatepos, 
+                            unitedhealthcare-uhcchoicepluspos">
+                                United Healthcare</option>
+
+                            <option value="humana-humanawacohmoxhix,
+                            humana-humanatampabaycorenet,
+                            humana-humanatampabayhumxhmox,
+                            humana-humanasanantoniohmoxhix,
+                            humana-humanasouthfloridahumxhmox,
+                            humana-humanasouthfloridahumxhmoxhix,
+                            humana-humanacohmoxhix,
+                            humana-humanadentalppo,
+                            humana-humanariograndeepoxhix,
+                            humana-humanapreferredppo,
+                            humana-humanatucsonhmox,
+                            humana-humanaphoenixhmox,
+                            humana-humanaatlantahmox,
+                            humana-humanaatlantahmoxhix,
+                            humana-humanachoicecarenetworkppo,
+                            humana-humanacolumbusgahmoxhix,
+                            humana-humanagoldplushmo,
+                            humana-humanahmopremierhix,
+                            humana-humanahoustonhmox,
+                            humana-humanacolumbusgahmox,
+                            humana-humanahmoselect,
+                            humana-humanaaustinhmoxhix,
+                            humana-humanatampabayhumxhmoxhix">
+                                Humana
+                            </option>
+
+                            <option value="cigna-cignappo,
+                            cigna-cignahmo,
+                            cigna-cignaopenaccessplus,
+                            cigna-cignalocalplus,
+                            cigna-vision">
+                                Cigna
+                            </option>
+
+                            <option value="bluecrossblueshieldofgeorgia-bcbsgadirectaccesswhsa, 
+                            bluecrossblueshieldofgeorgia-bcbsgabluechoiceppo, 
+                            bluecrossblueshieldofgeorgia-bcbsgablueopenaccesspos, 
+                            bluecrossblueshieldofgeorgia-bcbsgadentalcomplete, 
+                            bluecrossblueshieldofgeorgia-bcbsgabluechoicehmo, 
+                            bluecrossblueshieldofgeorgia-bcbsgabluechoiceoptionpos">
+                                Blue Cross Blue Shield Georgia</option>
+
+
+
+                        </select>
+
+=======
 
 
                         </select>
 
                     </div>
 
-                    <div class="col-3">
+                    <div class=col-3">
                         <label for="city">City</label>
                         <!-- id="city-input" -->
                         <input type="city" class="form-control" id="city-input">
@@ -130,6 +298,18 @@
                             <!-- examples -->
                             <!-- ADD VALUES once we establish the full list -->
                             <option value="">Show All</option>
+                            <option value="dermatologist">Dermatology</option>
+                            <option value="physical-therapist">Physical Therapy</option>
+                            <option value="dentist">Dentistry</option>
+                            <option value="psychiatrist">Psychiatrist</option>
+                            <option value="ear-nose-throat-doctor">Ear, Nose & Throat</option>
+                            <option value="general-practitioner">General Practice</option>
+                            <option value="pedatrician">Pediatrics</option>
+                            <option value="podiatrist">Podiatry</option>
+                            <option value="mental-health-counselor">Mental Health Counseling</option>
+                            <option value="acupuncturist">Acupuncture</option>
+
+
 
                             <option value="dermatologist">Dermatology</option>
                             <option value="oncologist">Oncology</option>
@@ -147,6 +327,61 @@
                     </div>
                 </div>
             </div>
+        </div>
+
+
+
+        <div class="row">
+            <div class="col">
+                <div class="card">
+
+                    <div class="card-header">
+                        <h5>Doctors</h5>
+                    </div>
+
+                    <div id="docs-appear-here">
+                        <table class="table text-center align-middle">
+
+                            <tr>
+
+                            </tr>
+
+                        </table>
+                    </div>
+
+
+                    <div class="table2"></div>
+                    <!-- testing the collapse menu -->
+
+
+                </div>
+
+
+
+
+
+
+
+
+                <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+                <script type="text/javascript"
+                    src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/2.0.0/handlebars.min.js"></script>
+
+
+                <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+                    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+                    crossorigin="anonymous"></script>
+
+
+                <script
+                    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAxqUekZhoGLhnTT57LPgjezVUPWx02C0M&callback=myMap"></script>
+
+
+                <script src="script.js"></script>
+
+
+
+</body>
 
             <br>
 
