@@ -38,7 +38,7 @@ $.ajax({
 $("#clickme").click(function () {
 
     event.preventDefault();
-  
+
 
     var api_key = '3100b109c4a9e2fdf5b47a749eb32965';
 
@@ -58,8 +58,8 @@ $("#clickme").click(function () {
 
     // insurance try?
 
-    
-var insurance = $("#provider-input option:selected").val().toLowerCase();
+
+    var insurance = $("#provider-input option:selected").val().toLowerCase();
 
     // user location
 
@@ -73,12 +73,14 @@ var insurance = $("#provider-input option:selected").val().toLowerCase();
         + '&user_location=' + user_location
         + '&skip=0&limit=10&user_key=' + api_key;
 
-        console.log(resource_url);
+    console.log(resource_url);
 
 
 
 
     $(".thedocs").remove();
+    $(".thedocsTR").remove();
+
 
 
 
@@ -88,87 +90,116 @@ var insurance = $("#provider-input option:selected").val().toLowerCase();
     }).then(function (response) {
 
 
-        console.log(response);
 
-        // should show first doctors full name 
+        var count = response.meta.count;
 
-        console.log(response.data[0].profile.first_name + " " + response.data[0].profile.last_name);
+        console.log("this is the count: " + count);
 
-        console.log("---------------------");
+        if (count === 0) {
 
-        console.log(response.data.length);
-
-
-
-        // i'll put a loop so we can show a few
-
-        for (let i = 0; i < response.data.length; i++) {
+            $(".thedocs").remove();
+            $(".thedocsTR").remove();
 
 
 
+            var tr = $("<tr>");
 
 
-            var doctor_name = response.data[i].profile.first_name + " " + response.data[i].profile.last_name;
-
-            // I did the variable below this way just to save us from needing another variable
+            var docTd = $("<td class = 'thedocs' >").text("no doctors to show" );
 
 
-
-            
-            var doctor_img = $(" <td> <img class = 'thedocs' src=" + response.data[i].profile.image_url + ">");
-
-            // gonna get some addy stuff
-
-            var doctor_address_city = response.data[i].practices[0].visit_address.city; 
-            var doctor_address_state = response.data[i].practices[0].visit_address.state; 
-            var doctor_address_street = response.data[i].practices[0].visit_address.street; 
-            var doctor_address_zip = response.data[i].practices[0].visit_address.zip; 
-            var doctor_address_full = (doctor_address_city + " " + doctor_address_state + " " + doctor_address_street + " " + doctor_address_zip );
-            var doctor_address_url = doctor_address_full.replace(/\s+/g, '+')
-
-
-
-
-            console.log(doctor_name);
-            console.log(doctor_img);
-
-        // console.log("THIS WILL SHOW ONE CITY " + doctor_address_city);
-        // console.log("THIS WILL SHOW ONE STATE " + doctor_address_state);
-        // console.log("THIS WILL SHOW ONE street " + doctor_address_street);
-        // console.log("THIS WILL SHOW ONE zip " + doctor_address_zip);
-        console.log(doctor_address_full);
-        console.log(doctor_address_url);
-        var lat = response.data[i].practices[0].lat;
-        var lon = response.data[i].practices[0].lat;
-        console.log(lat);
-        console.log(lon);
-
-
-
-
-
-
-            var tr= $("<tr>");
-
-
-            var docTd = $("<td class = 'thedocs' >").text("doc: " + doctor_name);
-
-           
-            tr.append(docTd).append(doctor_img);
-
-
-            
+            tr.append(docTd);
 
 
             $(".table").append(tr);
+
+        }
+
+        else {
+
+            $(".thedocs").remove();
+            $(".thedocsTR").remove();
+
+
+
+
+
+            // i'll put a loop so we can show a few
+
+            for (let i = 0; i < response.data.length; i++) {
+
+
+
+
+
+
+
+                var doctor_name = response.data[i].profile.first_name + " " + response.data[i].profile.last_name;
+
+                // I did the variable below this way just to save us from needing another variable
+
+
+
+
+                var doctor_img = $(" <td> <img class = 'thedocs' src=" + response.data[i].profile.image_url + ">");
+
+                // gonna get some addy stuff
+
+                var doctor_address_city = response.data[i].practices[0].visit_address.city;
+                var doctor_address_state = response.data[i].practices[0].visit_address.state;
+                var doctor_address_street = response.data[i].practices[0].visit_address.street;
+                var doctor_address_zip = response.data[i].practices[0].visit_address.zip;
+                var doctor_address_full = (doctor_address_city + " " + doctor_address_state + " " + doctor_address_street + " " + doctor_address_zip);
+                var doctor_address_url = doctor_address_full.replace(/\s+/g, '+')
+
+
+
+
+                console.log(doctor_name);
+                console.log(doctor_img);
+
+                // console.log("THIS WILL SHOW ONE CITY " + doctor_address_city);
+                // console.log("THIS WILL SHOW ONE STATE " + doctor_address_state);
+                // console.log("THIS WILL SHOW ONE street " + doctor_address_street);
+                // console.log("THIS WILL SHOW ONE zip " + doctor_address_zip);
+                console.log(doctor_address_full);
+                console.log(doctor_address_url);
+                var lat = response.data[i].practices[0].lat;
+                var lon = response.data[i].practices[0].lat;
+                console.log(lat);
+                console.log(lon);
+
+
+
+
+
+
+                var tr = $("<tr class = 'thedocsTR' >");
+
+
+                var docTd = $("<td class = 'thedocs' >").text("doc: " + doctor_name);
+
+
+                tr.append(docTd).append(doctor_img);
+
+
+
+
+
+                $(".table").append(tr);
+
+
+            }
+
 
 
         }
 
 
 
+
     })
-    
+
 
 
 
