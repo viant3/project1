@@ -199,7 +199,6 @@ $("#clickme").click(function () {
                     center: new google.maps.LatLng(lat, lon),
                     zoom: 16,
                 };
-=======
 
 
                 var tr = $("<tr class = 'thedocsTR card border-light mb-3' >");
@@ -212,21 +211,16 @@ $("#clickme").click(function () {
                 var docAddressTd = $("<td class = 'thedocsaddress' >").text(doctor_address_full);
 
                 var mapTd = $("<td style = 'width:100%; height: 500px;' id = 'googleMap_" + i + "' >" + map);
-=======
-                var docPhoneTd = $("<td class = 'thedocsphone' >").text(doctor_phone);
 
 
                 var docPhoneTd = $("<td class = 'thedocsphone' >").text(doctor_phone);
 
-=======
-                tr.append(docTd).append(doctor_img).append(docBioTd).append(docAddressTd).append(docPhoneTd);
 
 
                 tr.append(docTd).append(doctor_img).append(docBioTd).append(docAddressTd).append(mapTd).append(docPhoneTd);
 
 
 
-                $(".table").append(tr);
 
 
                 $(".table").append(tr);
@@ -237,23 +231,6 @@ $("#clickme").click(function () {
                     position: new google.maps.LatLng(lat, lon),
                     title: "Hello World!"
                 });
-=======
-                // var accDiv = $('<div class="accordion thedocsAcc" id="accordionExample">');
-
-                // var cardDiv = $('<div class="card thedocsCard">');
-
-                // var cardHeader = $('  <div class="card-header" id="headingOne"> <button class="btn btn-link card-btn" type="button" data-toggle="collapse"   data-target="#collapseOne" > </button> </div>');
-
-                // var cardButtonDiv = $(".card-btn").text("doc: " + doctor_name);
-
-                // var collapseDiv = $(' <div id="collapseOne" class="collapse show"  data-parent="#accordionExample"> <div class="card-body"> </div>');
-
-                // var cardBodyContent = $(".card-body").text(doctor_address_full);
-
-
-                // accDiv.append(cardDiv).append(cardHeader).append(cardButtonDiv).append(collapseDiv).append(cardBodyContent);
-
-                // $(".table2").append(accDiv);
 
                 // To add the marker to the map, call setMap();
                 marker.setMap(map);
@@ -282,6 +259,14 @@ $("#clickme").click(function () {
 
 
 
+
+
+
+
+
+
+
+
             }
 
 
@@ -307,34 +292,6 @@ $("#clickme").click(function () {
 
 // google API Key: AIzaSyAxqUekZhoGLhnTT57LPgjezVUPWx02C0M
 // hellp
-
-
-            }
-
-
-
-        }
-
-
-
-
-    })
-
-
-
-
-
-
-
-
-
-});
-
-
-
-// google API Key: AIzaSyAxqUekZhoGLhnTT57LPgjezVUPWx02C0M
-// hellp
-
 
 
 
