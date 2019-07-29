@@ -13,10 +13,10 @@ $.ajax({
     // finna see if i can output the amerihealth plans
 
 
-    for (let i = 0; i < 4; i++) {
+    for (let i = 0; i < 23; i++) {
 
 
-        plans = response1.data[0].plans[i].uid + ",";
+        plans = response1.data[1].plans[i].uid + ",";
 
         plansString = JSON.stringify(plans);
 
@@ -76,7 +76,7 @@ $("#clickme").click(function () {
     console.log(resource_url);
 
 
-// clearing the results before 
+    // clearing the results before 
 
     $(".thedocs").remove();
     $(".thedocsTR").remove();
@@ -107,7 +107,7 @@ $("#clickme").click(function () {
             var tr = $("<tr>");
 
 
-            var docTd = $("<td class = 'thedocs' >").text("no doctors to show" );
+            var docTd = $("<td class = 'thedocs' >").text("no doctors to show");
 
 
             tr.append(docTd);
@@ -156,6 +156,8 @@ $("#clickme").click(function () {
                 var doctor_address_full = (doctor_address_city + " " + doctor_address_state + " " + doctor_address_street + " " + doctor_address_zip);
                 var doctor_address_url = doctor_address_full.replace(/\s+/g, '+')
                 var doctor_phone = response.data[i].practices[0].phones[0].number;
+                var doctor_profile = response.data[i].profile.bio;
+
 
 
 
@@ -178,14 +180,12 @@ $("#clickme").click(function () {
 
 
 
+                var tr = $("<tr class = 'thedocsTR card border-light mb-3' >");
 
 
+                var docTd = $("<td class = 'thedocs card-header text-center align-middle' >").text(doctor_name);
 
-
-                var tr = $("<tr class = 'thedocsTR' >");
-
-
-                var docTd = $("<td class = 'thedocs' >").text("doc: " + doctor_name);
+                var docBioTd = $("<div class = 'container thedocs ' >").text(doctor_profile);
 
                 var docAddressTd = $("<td class = 'thedocsaddress' >").text(doctor_address_full);
 
@@ -193,13 +193,41 @@ $("#clickme").click(function () {
 
 
 
-                tr.append(docTd).append(doctor_img).append(docAddressTd).append(docPhoneTd);
+                tr.append(docTd).append(doctor_img).append(docBioTd).append(docAddressTd).append(docPhoneTd);
 
 
 
 
 
                 $(".table").append(tr);
+
+
+                // var accDiv = $('<div class="accordion thedocsAcc" id="accordionExample">');
+
+                // var cardDiv = $('<div class="card thedocsCard">');
+
+                // var cardHeader = $('  <div class="card-header" id="headingOne"> <button class="btn btn-link card-btn" type="button" data-toggle="collapse"   data-target="#collapseOne" > </button> </div>');
+
+                // var cardButtonDiv = $(".card-btn").text("doc: " + doctor_name);
+
+                // var collapseDiv = $(' <div id="collapseOne" class="collapse show"  data-parent="#accordionExample"> <div class="card-body"> </div>');
+
+                // var cardBodyContent = $(".card-body").text(doctor_address_full);
+
+
+                // accDiv.append(cardDiv).append(cardHeader).append(cardButtonDiv).append(collapseDiv).append(cardBodyContent);
+
+                // $(".table2").append(accDiv);
+
+
+
+
+
+
+
+
+
+
 
 
             }
