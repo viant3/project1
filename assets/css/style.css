@@ -1,25 +1,47 @@
 body{
+background-color: rgb(255, 247, 189);
+/* background-image: linear-gradient( rgb(254, 242, 156), white ); */
+background-repeat: no-repeat;
+font-family: 'Poppins', sans-serif;
 
-background-image: url(../images/Copy-of-Copy-of-Untitled-2.png)
+}
 
+.navbar {
+    /* background-image: linear-gradient( rgba(78, 247, 179, 0.609),  rgb(255, 246, 174));
+    padding-bottom: 4%; */
+    background-color: rgb(73, 171, 138);
+ 
+
+ 
 }
 
 .navtext {
-    margin: 0, 10%, 0, 10%,
-
+   color:  rgb(255, 251, 221);
+   text-shadow: 1px 1px rgba(68, 68, 68, 0.363);
+   font-size: 110%;
 }
 
-/* #header{
 
-background-image: url(../images/6886404837_614425b97b_b.jpg);
-text-align: center;
-padding-bottom: 40%;
 
-} */
+h4 {
+    text-shadow: 1px 1px rgba(68, 68, 68, 0.363);
+}
 
-#fill-out-form{
+#contents {
+    background-color: rgba(255, 255, 255, 0);
+    color: #222;
+    box-shadow: 5px 10px rgba(73, 171, 138, 0.383)
+    
+}
 
-background-color: rgb(7, 151, 207);
-padding: 10%
 
+.btn {
+   color: #222;
+    background-color:  rgb(73, 171, 138)
+    
+}
+
+.btn:hover {
+    color: #444;
+    background-color:  rgba(168, 248, 216, 0.609);
 }

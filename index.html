@@ -8,11 +8,10 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
     <!-- working title -->
-    <title>The Doctor Is In!</title>
+    <title>the doctor is in!</title>
 
     <!-- font awesome icons -->
-    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"
-        integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
     <!-- including bootstrap just for the 'container' class & its grid -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
@@ -24,24 +23,35 @@
     <link rel="stylesheet" href="style.css">
 
     <!-- fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Poppins&display=swap" rel="stylesheet"> 
+
+   
 
 
 </head>
 
 <body>
 
+    <nav class="navbar">
+       
+        <div class="container">
+ 
+        <span class="navbar-brand navtext">the doctor is in! <i class="fa fa-user-md" style="font-size:36px"></i></span>
+        <span class="navbar-text navtext">
+            find local medical experts in your area!
+        </span>
+    </div>
+    </nav>
 
     <div class="container">
-
-        <nav class="navbar navbar-light bg-light">
-            <span class="navbar-brand navtext">The Doctor Is In!</span>
-            <span class="navbar-text navtext">
-                Find local medical experts in your area!
-            </span>
-        </nav>
-
+   
         <!-- Page header -->
         <div id="contents" class="jumbotron">
+
+                <h4>doctor search <i class="fa fa-search" style="font-size:24px"></i></h4>
+
+                <hr>
+        
 
             <!-- user input card -->
             <!-- id say work on the functionality for this section, and then once we get that working we can add an "OR search by name" query section  -->
@@ -259,6 +269,7 @@
                         <select class="form-control" id="specialty-input">
                             <!-- examples -->
                             <!-- ADD VALUES once we establish the full list -->
+                            <option value="">Show All</option>
                             <option value="dermatologist">Dermatology</option>
                             <option value="physical-therapist">Physical Therapy</option>
                             <option value="dentist">Dentistry</option>
@@ -286,79 +297,24 @@
         <div class="row">
             <div class="col">
                 <div class="card">
+
                     <div class="card-header">
                         <h5>Doctors</h5>
                     </div>
+
                     <div id="docs-appear-here">
-                        <table class="table">
+                        <table class="table text-center align-middle">
+
                             <tr>
-                                <th>Name</th>
-                                <th>Title</th>
-                                <th>Address</th>
-                                <th>Map</th>
+                             
                             </tr>
+
                         </table>
                     </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- <div class="accordion" id="accordionExample">
-            <div class="card">
-              <div class="card-header" id="headingOne">
-                <h2 class="mb-0">
-                  <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                    Collapsible Group Item #1
-                  </button>
-                </h2>
-              </div>
-          
-              <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
-                <div class="card-body">
-                  Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
-                </div>
-              </div>
-            </div>
-            <div class="card">
-              <div class="card-header" id="headingTwo">
-                <h2 class="mb-0">
-                  <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                    Collapsible Group Item #2
-                  </button>
-                </h2>
-              </div>
-              <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
-                <div class="card-body">
-                  Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
-                </div>
-              </div>
-            </div>
-            <div class="card">
-              <div class="card-header" id="headingThree">
-                <h2 class="mb-0">
-                  <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                    Collapsible Group Item #3
-                  </button>
-                </h2>
-              </div>
-              <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
-                <div class="card-body">
-                  Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
-                </div>
-              </div>
-            </div>
-          </div>
-
-      
- -->
 
 
-
-
-
-
-
-
+                    <div class="table2"></div>
+                    <!-- testing the collapse menu -->
 
 
         </div>
