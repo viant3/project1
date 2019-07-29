@@ -165,7 +165,7 @@ $("#clickme").click(function () {
                 console.log(doctor_address_full);
                 console.log(doctor_address_url);
                 var lat = response.data[i].practices[0].lat;
-                var lon = response.data[i].practices[0].lat;
+                var lon = response.data[i].practices[0].lon;
                 console.log(lat);
                 console.log(lon);
 
