@@ -1,4 +1,3 @@
-
 var resource_url = "https://api.betterdoctor.com/2016-03-01/insurances?user_key=3100b109c4a9e2fdf5b47a749eb32965"
 
 
@@ -14,10 +13,10 @@ $.ajax({
     // finna see if i can output the amerihealth plans
 
 
-    for (let i = 0; i < 4; i++) {
+    for (let i = 0; i < 5; i++) {
 
 
-        plans = response1.data[0].plans[i].uid + ",";
+        plans = response1.data[78].plans[i].uid + ",";
 
         plansString = JSON.stringify(plans);
 
@@ -39,7 +38,7 @@ $.ajax({
 $("#clickme").click(function () {
 
     event.preventDefault();
-  
+
 
     var api_key = '3100b109c4a9e2fdf5b47a749eb32965';
 
@@ -59,12 +58,12 @@ $("#clickme").click(function () {
 
     // insurance try?
 
-    
-var insurance = $("#provider-input option:selected").val().toLowerCase();
+
+    var insurance = $("#provider-input option:selected").val().toLowerCase();
 
     // user location
 
-    var user_location = '28.493873%2C%20-81.597213';
+    var user_location = '';
 
     // this is the resource url we are using for the CLICK ONLY
 
@@ -74,12 +73,16 @@ var insurance = $("#provider-input option:selected").val().toLowerCase();
         + '&user_location=' + user_location
         + '&skip=0&limit=10&user_key=' + api_key;
 
-        console.log(resource_url);
+    console.log(resource_url);
 
 
-
+// clearing the results before 
 
     $(".thedocs").remove();
+    $(".thedocsTR").remove();
+    $(".thedocsaddress").remove();
+
+
 
 
 
@@ -89,114 +92,115 @@ var insurance = $("#provider-input option:selected").val().toLowerCase();
     }).then(function (response) {
 
 
-        console.log(response);
 
-        // should show first doctors full name 
+        var count = response.meta.count;
 
-        console.log(response.data[0].profile.first_name + " " + response.data[0].profile.last_name);
+        console.log("this is the count: " + count);
 
-        console.log("---------------------");
+        if (count === 0) {
 
-        console.log(response.data.length);
-
-
-
-        // i'll put a loop so we can show a few
-
-        for (let i = 0; i < response.data.length; i++) {
+            $(".thedocs").remove();
+            $(".thedocsTR").remove();
 
 
 
-            var doctor_name = response.data[i].profile.first_name + " " + response.data[i].profile.last_name;
-
-            // I did the variable below this way just to save us from needing another variable
-            var doctor_img = $("<img class = 'thedocs' src=" + response.data[i].profile.image_url + ">");
-
-            console.log(doctor_name);
-
-            var showDiv = $("<div>");
+            var tr = $("<tr>");
 
 
-            var p = $("<p class = 'thedocs' >").text("doc: " + doctor_name);
-
-            showDiv.append(doctor_img);
-            showDiv.append(p);
-            
+            var docTd = $("<td class = 'thedocs' >").text("no doctors to show" );
 
 
-            $("#docs-appear-here").append(showDiv);
+            tr.append(docTd);
+
+
+            $(".table").append(tr);
+
+        }
+
+        else {
+
+            $(".thedocs").remove();
+            $(".thedocsTR").remove();
+
+
+
+
+
+            // i'll put a loop so we can show a few
+
+            for (let i = 0; i < response.data.length; i++) {
+
+
+
+
+
+
+
+                var doctor_name = response.data[i].profile.first_name + " " + response.data[i].profile.last_name;
+
+                // I did the variable below this way just to save us from needing another variable
+
+
+                var doctor_img = $(" <td> <img class = 'thedocs' src=" + response.data[i].profile.image_url + ">");
+
+                // gonna get some addy stuff
+
+                var doctor_address_city = response.data[i].practices[0].visit_address.city;
+                var doctor_address_state = response.data[i].practices[0].visit_address.state;
+                var doctor_address_street = response.data[i].practices[0].visit_address.street;
+                var doctor_address_zip = response.data[i].practices[0].visit_address.zip;
+                var doctor_address_full = (doctor_address_city + " " + doctor_address_state + " " + doctor_address_street + " " + doctor_address_zip);
+                var doctor_address_url = doctor_address_full.replace(/\s+/g, '+')
+
+
+
+
+                console.log(doctor_name);
+                console.log(doctor_img);
+
+                // console.log("THIS WILL SHOW ONE CITY " + doctor_address_city);
+                // console.log("THIS WILL SHOW ONE STATE " + doctor_address_state);
+                // console.log("THIS WILL SHOW ONE street " + doctor_address_street);
+                // console.log("THIS WILL SHOW ONE zip " + doctor_address_zip);
+                console.log(doctor_address_full);
+                console.log(doctor_address_url);
+                var lat = response.data[i].practices[0].lat;
+                var lon = response.data[i].practices[0].lon;
+                console.log(lat);
+                console.log(lon);
+
+
+
+
+
+
+                var tr = $("<tr class = 'thedocsTR' >");
+
+
+                var docTd = $("<td class = 'thedocs' >").text("doc: " + doctor_name);
+
+                var docAddressTd = $("<td class = 'thedocsaddress' >").text(doctor_address_full);
+
+
+                tr.append(docTd).append(doctor_img).append(docAddressTd);
+
+
+
+
+
+                $(".table").append(tr);
+
+
+            }
+
 
 
         }
 
 
 
+
     })
-
-    // var location = 
-    
-    // var resource_url = "https://www.google.com/maps/embed/v1/streetview?key=" YOUR_API_KEY
-    // "&location=" 46.414382,10.013988
-    // "&heading=" 210
-    // "&pitch=" 10
-    // "&fov=" 35;
-
-    // $.ajax({
-    //     url: resource_url,
-    //     method: "GET"
-    // }).then(function (response) {
-
-
-    //     console.log(response);
-
-    //     for (let i = 0; i < response.data.length; i++) {
-
-    //     }
-
-    // });
-
-    // .then(function () {
-
-    //     event.preventDefault();
-
-
-    //     var resource_url = "https://api.betterdoctor.com/2016-03-01/insurances?user_key=3100b109c4a9e2fdf5b47a749eb32965"
-
-
-    //     $.ajax({
-    //         url: resource_url,
-    //         method: "GET"
-    //     }).then(function (response) {
-
-    //         console.log("this is the insurance stuff")
-
-    //         console.log(response);
-
-    // // finna see if i can output the amerihealth plans
-
-
-    //         for (let i = 0; i < 4; i++) {
-
-
-    //             var plans = response.data[0].plans[i].uid + ",";
-
-    //             var plansString = JSON.stringify(plans);
-
-    //             console.log(plansString);
-
-
-
-    //         }
-
-
-
-    //     });
-
-
-
-    // });
-
-
 
 
 
@@ -210,20 +214,5 @@ var insurance = $("#provider-input option:selected").val().toLowerCase();
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+// google API Key: AIzaSyAxqUekZhoGLhnTT57LPgjezVUPWx02C0M
+// hellp

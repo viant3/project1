@@ -3,13 +3,19 @@ body{
 background-image: url(../images/Copy-of-Copy-of-Untitled-2.png)
 
 }
-#header{
+
+.navtext {
+    margin: 0, 10%, 0, 10%,
+
+}
+
+/* #header{
 
 background-image: url(../images/6886404837_614425b97b_b.jpg);
 text-align: center;
 padding-bottom: 40%;
 
-}
+} */
 
 #fill-out-form{
 
