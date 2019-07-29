@@ -1,6 +1,5 @@
 var resource_url = "https://api.betterdoctor.com/2016-03-01/insurances?user_key=3100b109c4a9e2fdf5b47a749eb32965"
 
-
 $.ajax({
     url: resource_url,
     method: "GET"
@@ -67,11 +66,29 @@ $("#clickme").click(function () {
 
     // this is the resource url we are using for the CLICK ONLY
 
-    var resource_url = 'https://api.betterdoctor.com/2016-03-01/doctors?' + 'insurance_uid=' + insurance
-        + '&specialty_uid=' + specialty
-        + '&location=' + doctor_state + "-" + doctor_city
-        + '&user_location=' + user_location
-        + '&skip=0&limit=10&user_key=' + api_key;
+    if (doctor_city === "") {
+
+        var resource_url = 'https://api.betterdoctor.com/2016-03-01/doctors?' + 'insurance_uid=' + insurance
+            + '&specialty_uid=' + specialty
+            + '&location=' + doctor_state
+            + '&user_location=' + user_location
+            + "&sort=best-match-desc"
+            + '&skip=0&limit=10&user_key=' + api_key;
+
+    }
+
+    else {
+
+        var resource_url = 'https://api.betterdoctor.com/2016-03-01/doctors?' + 'insurance_uid=' + insurance
+            + '&specialty_uid=' + specialty
+            + '&location=' + doctor_state + "-" + doctor_city
+            + '&user_location=' + user_location
+            + "&sort=best-match-desc"
+            + '&skip=0&limit=10&user_key=' + api_key;
+
+    }
+
+
 
     console.log(resource_url);
 
@@ -179,6 +196,10 @@ $("#clickme").click(function () {
                 console.log(lon);
                 console.log(doctor_phone);
 
+                var mapProp = {
+                    center: new google.maps.LatLng(lat, lon),
+                    zoom: 16,
+                };
 
 
                 var tr = $("<tr class = 'thedocsTR card border-light mb-3' >");
@@ -190,17 +211,33 @@ $("#clickme").click(function () {
 
                 var docAddressTd = $("<td class = 'thedocsaddress' >").text(doctor_address_full);
 
+                var mapTd = $("<td style = 'width:100%; height: 500px;' id = 'googleMap_" + i + "' >" + map);
+
+
                 var docPhoneTd = $("<td class = 'thedocsphone' >").text(doctor_phone);
 
 
 
-                tr.append(docTd).append(doctor_img).append(docBioTd).append(docAddressTd).append(docPhoneTd);
+                tr.append(docTd).append(doctor_img).append(docBioTd).append(docAddressTd).append(mapTd).append(docPhoneTd);
 
 
 
 
 
                 $(".table").append(tr);
+
+                var map = new google.maps.Map(document.getElementById("googleMap_" + i), mapProp);
+
+                var marker = new google.maps.Marker({
+                    position: new google.maps.LatLng(lat, lon),
+                    title: "Hello World!"
+                });
+
+                // To add the marker to the map, call setMap();
+                marker.setMap(map);
+
+
+
 
 
                 // var accDiv = $('<div class="accordion thedocsAcc" id="accordionExample">');
@@ -256,7 +293,6 @@ $("#clickme").click(function () {
 
 // google API Key: AIzaSyAxqUekZhoGLhnTT57LPgjezVUPWx02C0M
 // hellp
-
 
 
 
