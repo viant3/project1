@@ -94,6 +94,7 @@ $("#clickme").click(function () {
         var count = response.meta.count;
 
         console.log("this is the count: " + count);
+        console.log(response);
 
         if (count === 0) {
 
