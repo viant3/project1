@@ -76,7 +76,7 @@ $("#clickme").click(function () {
     console.log(resource_url);
 
 
-// clearing the results before 
+    // clearing the results before 
 
     $(".thedocs").remove();
     $(".thedocsTR").remove();
@@ -108,7 +108,7 @@ $("#clickme").click(function () {
             var tr = $("<tr>");
 
 
-            var docTd = $("<td class = 'thedocs' >").text("no doctors to show" );
+            var docTd = $("<td class = 'thedocs' >").text("no doctors to show");
 
 
             tr.append(docTd);
@@ -174,9 +174,14 @@ $("#clickme").click(function () {
 
 
 
+                var mapProp = {
+                    center: new google.maps.LatLng(lat, lon),
+                    zoom: 16,
+                };
+               
 
 
-
+                console.log(map)
                 var tr = $("<tr class = 'thedocsTR' >");
 
 
@@ -184,15 +189,14 @@ $("#clickme").click(function () {
 
                 var docAddressTd = $("<td class = 'thedocsaddress' >").text(doctor_address_full);
 
+                var mapTd = $("<td id = 'googleMap_" + i + "' >" + map);
 
-                tr.append(docTd).append(doctor_img).append(docAddressTd);
-
-
+                tr.append(docTd).append(doctor_img).append(docAddressTd).append(mapTd);
 
 
 
                 $(".table").append(tr);
-
+                var map = new google.maps.Map(document.getElementById("googleMap_" + i), mapProp);
 
             }
 
