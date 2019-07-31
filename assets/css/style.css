@@ -1,7 +1,6 @@
 body{
-background-color: rgb(255, 247, 189);
+background-color: rgb(250, 250, 250);
 /* background-image: linear-gradient( rgb(254, 242, 156), white ); */
-background-repeat: no-repeat;
 font-family: 'Poppins', sans-serif;
 
 }
@@ -9,14 +8,14 @@ font-family: 'Poppins', sans-serif;
 .navbar {
     /* background-image: linear-gradient( rgba(78, 247, 179, 0.609),  rgb(255, 246, 174));
     padding-bottom: 4%; */
-    background-color: rgb(73, 171, 138);
+    background-color: #55EAC4;
  
 
  
 }
 
 .navtext {
-   color:  rgb(255, 251, 221);
+   color:  rgb(255, 255, 255);
    text-shadow: 1px 1px rgba(68, 68, 68, 0.363);
    font-size: 110%;
 }
@@ -30,18 +29,103 @@ h4 {
 #contents {
     background-color: rgba(255, 255, 255, 0);
     color: #222;
-    box-shadow: 5px 10px rgba(73, 171, 138, 0.383)
+    box-shadow: 5px 10px #55EAC4;
     
 }
 
 
 .btn {
    color: #222;
-    background-color:  rgb(73, 171, 138)
+    background-color:  #55EAC4;
     
 }
 
 .btn:hover {
-    color: #444;
-    background-color:  rgba(168, 248, 216, 0.609);
+    color: rgb(255, 255, 255);
+    background-color:  #01E6AF;
+}
+
+
+
+
+.results {
+
+
+
+    box-shadow: 5px 10px #FCB9C0;
+
+
+
+}
+
+img {
+
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding: 10px;    
+
+height: 100%;
+width: 150px;
+
+
+
+}
+
+
+.thedocsfullbio {
+
+
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding: 10px;    
+
+
+}
+
+.card {
+
+border: none;
+
+}
+
+
+.card-header {
+
+
+    background-color: rgba(252, 185, 192, 0.521);
+
+
+}
+
+.results_main {
+
+
+    background-color: rgb(255, 255, 255);
+
+
+}
+
+.resultscard {
+
+display: none;
+
+
+}
+
+/* this is the color of what is selected in the dropdown */
+
+.dropdown-item.active, .dropdown-item:active {
+    color: #fff;
+    text-decoration: none;
+    background-color: #55EAC4;
+}
+
+.thedocdiv  {
+    color: #222;
+    border: none;
+   
+    background-color: rgba(252, 185, 192, 0.226);
+    
+    font-size: 93%;
+    font-weight: 600;
 }
