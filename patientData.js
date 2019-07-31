@@ -12,9 +12,6 @@ var firebaseConfig = {
 firebase.initializeApp(firebaseConfig);
 
 var database = firebase.database();
-// Initial Values
-var specialtyNeeded = "";
-
 
 
 // Capture Button Click
@@ -22,6 +19,8 @@ $("#clickme").on("click", function (event) {
   event.preventDefault();
 
   // Grabbed values from text-boxes
+  var insurance = $("#provider-input option:selected").val();
+  var insuranceDisplay = insurance.split(/\s(.+)/)[0]; 
   var specialty = $("#specialty-input option:selected").val().toLowerCase();
   var city = $("#city-input").val().trim().replace(' ', '-').toLowerCase();
   var state = $("#state-input option:selected").val().toLowerCase();
@@ -29,6 +28,7 @@ $("#clickme").on("click", function (event) {
 
     // Code for "Setting values in the database"
     var newPatient = {
+      insurance: insuranceDisplay,
       specialty: specialty,
       city: city,
       state: state,
@@ -47,6 +47,7 @@ database.ref().on("child_added", function (snapshot) {
   
   
     // Change the HTML to reflect
+    var tdinsurance = $("<td>").text(snapshot.val().insurance);
     var tdspecialty = $("<td>").text(snapshot.val().specialty);
     var tdcity = $("<td>").text(snapshot.val().city);
     var tdstate = $("<td>").text(snapshot.val().state);
@@ -54,7 +55,7 @@ database.ref().on("child_added", function (snapshot) {
     
   
   
-    tr.append(tdspecialty).append(tdcity).append(tdstate).append(tddateAdded);
+    tr.append(tdinsurance).append(tdspecialty).append(tdcity).append(tdstate).append(tddateAdded);
   
     $(".patientData").append(tr);
   
