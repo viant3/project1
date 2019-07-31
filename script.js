@@ -36,6 +36,8 @@ $.ajax({
 
 $("#clickme").click(function () {
 
+    
+
     event.preventDefault();
 
 
@@ -96,8 +98,7 @@ $("#clickme").click(function () {
     // clearing the results before 
 
     $(".thedocs").remove();
-    $(".thedocsTR").remove();
-    $(".thedocsaddress").remove();
+   
 
 
 
@@ -116,9 +117,7 @@ $("#clickme").click(function () {
 
         if (count === 0) {
 
-            $(".thedocs").remove();
-            $(".thedocsTR").remove();
-
+          
 
 
             var tr = $("<tr>");
@@ -136,8 +135,7 @@ $("#clickme").click(function () {
 
         else {
 
-            $(".thedocs").remove();
-            $(".thedocsTR").remove();
+          
 
             console.log(response);
 
@@ -162,7 +160,6 @@ $("#clickme").click(function () {
 
 
 
-                var doctor_img = $(" <td> <img class = 'thedocs' src=" + response.data[i].profile.image_url + ">");
 
                 // gonna get some addy stuff
 
@@ -174,6 +171,7 @@ $("#clickme").click(function () {
                 var doctor_address_url = doctor_address_full.replace(/\s+/g, '+')
                 var doctor_phone = response.data[i].practices[0].phones[0].number;
                 var doctor_profile = response.data[i].profile.bio;
+                var doc_photo_link = response.data[i].profile.image_url;
 
 
 
@@ -201,23 +199,24 @@ $("#clickme").click(function () {
                 };
 
 
-                var tr = $("<tr class = 'thedocsTR card border-light mb-3' >");
+                var tr = $("<div class = ' thedocs row thedocdiv card border-light mb-3' >");
+
+                // this is lowkey genius right here isn't it?
+
+                var doctor_img = $(" <div class = 'container row '> <img class = ' thedocs col-lg-2' src=" + doc_photo_link + "> <div class = ' col thedocs thedocsfullbio' >" + doctor_profile + "</div> </div>" );
+
+                var docTd = $("<div class = ' container thedocs card-header text-center ' >").text(doctor_name);
+
+                var docAddressTd = $("<td class = 'thedocsaddress text-center align-middle' >").text(doctor_address_full);
+
+                var mapTd = $("<td class = 'thedocs text-center align-middle'  style = 'width:100%; height: 200px;' id = 'googleMap_" + i + "' >" + map);
 
 
-                var docTd = $("<td class = 'thedocs card-header text-center align-middle' >").text(doctor_name);
-
-                var docBioTd = $("<div class = 'container thedocs ' >").text(doctor_profile);
-
-                var docAddressTd = $("<td class = 'thedocsaddress' >").text(doctor_address_full);
-
-                var mapTd = $("<td style = 'width:100%; height: 500px;' id = 'googleMap_" + i + "' >" + map);
-
-
-                var docPhoneTd = $("<td class = 'thedocsphone' >").text(doctor_phone);
+                var docPhoneTd = $("<td class = 'thedocs thedocsphone text-center align-middle' >").text("phone: " + doctor_phone);
 
 
 
-                tr.append(docTd).append(doctor_img).append(docBioTd).append(docAddressTd).append(mapTd).append(docPhoneTd);
+                tr.append(docTd).append(doctor_img).append(docPhoneTd).append(docAddressTd).append(mapTd);
 
 
 
@@ -236,6 +235,8 @@ $("#clickme").click(function () {
                 marker.setMap(map);
 
 
+
+                
 
 
 
