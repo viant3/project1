@@ -1,7 +1,7 @@
 body{
 background-color: rgb(255, 247, 189);
 /* background-image: linear-gradient( rgb(254, 242, 156), white ); */
-background-repeat: no-repeat;
+
 font-family: 'Poppins', sans-serif;
 
 }
@@ -18,7 +18,7 @@ font-family: 'Poppins', sans-serif;
 .navtext {
    color:  rgb(255, 251, 221);
    text-shadow: 1px 1px rgba(68, 68, 68, 0.363);
-   font-size: 110%;
+   font-size: 130%;
 }
 
 
@@ -28,20 +28,85 @@ h4 {
 }
 
 #contents {
+   
     background-color: rgba(255, 255, 255, 0);
     color: #222;
-    box-shadow: 5px 10px rgba(73, 171, 138, 0.383)
+    box-shadow: 5px 10px rgba(73, 171, 138, 0.383);
+    
     
 }
 
 
+
+
+.city-state {
+    margin-top: 5%;
+}
+
 .btn {
    color: #222;
-    background-color:  rgb(73, 171, 138)
+    background-color:  rgb(73, 171, 138);
+   
     
 }
 
 .btn:hover {
     color: #444;
     background-color:  rgba(168, 248, 216, 0.609);
+    
+}
+
+
+.resultscard {
+    display: none;
+    margin-top: 5%;
+    box-shadow: 5px 10px rgba(73, 171, 138, 0.383);
+    border: none;
+    
+}
+
+.resultsbg {
+    background-color: rgb(255, 189, 189);
+    border: none;
+}
+
+#result-title {
+    text-align: center;
+    color: #222;
+    
+}
+
+
+
+img {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding: 10px;
+    max-height: 208px;
+    width: 150px;
+}
+
+
+.thedocsfullbio {
+
+    margin-top: 10px;
+    margin-top: 10px;
+    padding: 10px;
+}
+    
+
+.thedocsTR {
+    color: #222;
+    border: none;
+   
+    background-color:rgba(73, 171, 138, 0.144);
+    
+    font-size: 93%;
+    font-weight: 600;
+}
+
+.dropdown-item.active, .dropdown-item:active {
+    color: #fff;
+    text-decoration: none;
+    background-color: #55EAC4;
 }
