@@ -30,14 +30,14 @@ $.ajax({
 });
 
 
-
+$(".hideMe").hide();
 
 
 
 $("#clickme").click(function () {
 
     event.preventDefault();
-
+    $(".hideMe").show();
 
     var api_key = '3100b109c4a9e2fdf5b47a749eb32965';
 
@@ -99,7 +99,7 @@ $("#clickme").click(function () {
     $(".thedocsTR").remove();
     $(".thedocsaddress").remove();
 
-
+   
 
 
 
@@ -117,9 +117,10 @@ $("#clickme").click(function () {
 
         if (count === 0) {
 
+            $(".hideMe").show();
             $(".thedocs").remove();
             $(".thedocsTR").remove();
-
+          
 
 
             var tr = $("<tr>");
