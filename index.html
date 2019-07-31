@@ -16,10 +16,16 @@
     <!-- including bootstrap just for the 'container' class & its grid -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link rel="stylesheet" type="text/css" href="../project1/assets/css/style.css">
 
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.9/dist/css/bootstrap-select.min.css">
 
-  
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+
+    <script src="https://www.gstatic.com/firebasejs/6.0.4/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/6.0.4/firebase-database.js"></script>
+
 
     <!-- fonts -->
     <link href="https://fonts.googleapis.com/css?family=Poppins&display=swap" rel="stylesheet">
@@ -61,34 +67,59 @@
                     <div class="col-6">
                         <label for="insuranceprovider">Insurance Provider</label>
                         <!-- id="provider-input" -->
-                        <select type="provider" class="form-control" id="provider-input">
+                        <select type="provider" class="form-control selectpicker" id="provider-input">
+
+                                <option value=" ">I'll choose later</option>
+                             
+                                <option value="unitedhealthcare-uhcoptionsppo, 
+                                unitedhealthcare-uhcnavigatehmo, 
+                                unitedhealthcare-uhcmedicachoice, 
+                                unitedhealthcare-uhcnavigatepos, 
+                                unitedhealthcare-uhcchoicepluspos">
+                                    United Healthcare</option>
+
+                                    <option value="cigna-cignappo,
+                                    cigna-cignahmo,
+                                    cigna-cignaopenaccessplus,
+                                    cigna-cignalocalplus,
+                                    cigna-vision">
+                                        Cigna
+                                    </option>
+
+                                    <option value="aetna-aetnasignatureadministratorsppo,
+                                    aetna-aetnaadvantage6350hix,
+                                    aetna-aetnasavingsplusofaz,
+                                    aetna-aetnadmo,
+                                    aetna-aetnahealthnetworkoptionopenaccess,       
+                                    aetna-aetnahmo,     
+                                    aetna-aetnachoiceposii,
+                                    aetna-aetnaelectchoiceepo,
+                                    aetna-aetnadppo,   
+                                    aetna-aetnawholehealthprimecareoamcca,     
+                                    aetna-aetnawholehealthbannerhealthnetworkhmo,        
+                                    aetna-aetnabasichmo,
+                                    aetna-aetnaselect,
+                                    aetna-aetnasavingsplusofca,  
+                                    aetna-aetnabasichix,
+                                    aetna-aetnawholehealthprimecarehmoca,      
+                                    aetna-aetnawholehealthcoloradofrontrange,  
+                                    aetna-aetnahmodeductibleplancamembersonly,
+                                    aetna-aetnamanagedchoiceposopenaccess,     
+                                    aetna-aetnavitalidadpluscaconaetna,  
+                                    aetna-aetnachoiceposopenaccess,
+                                    aetna-aetnamdbronzesilverandgoldhmo">Aetna</option>
+
+                                <option data-divider="true"></option>
+
+                             
+
+
                             <option value="amerihealth-amerihealthregionalprefntwkhmohmopos,
                             amerihealth-amerihealthlocalvaluenetworkepoposppo,
                             amerihealth-amerihealthlocalvaluenetworkhmohmopos,
                             amerihealth-amerihealthregionalprefntwkepoposppo">Amerihealth</option>
 
-                            <option value="aetna-aetnasignatureadministratorsppo,
-                            aetna-aetnaadvantage6350hix,
-                            aetna-aetnasavingsplusofaz,
-                            aetna-aetnadmo,
-                            aetna-aetnahealthnetworkoptionopenaccess,       
-                            aetna-aetnahmo,     
-                            aetna-aetnachoiceposii,
-                            aetna-aetnaelectchoiceepo,
-                            aetna-aetnadppo,   
-                            aetna-aetnawholehealthprimecareoamcca,     
-                            aetna-aetnawholehealthbannerhealthnetworkhmo,        
-                            aetna-aetnabasichmo,
-                            aetna-aetnaselect,
-                            aetna-aetnasavingsplusofca,  
-                            aetna-aetnabasichix,
-                            aetna-aetnawholehealthprimecarehmoca,      
-                            aetna-aetnawholehealthcoloradofrontrange,  
-                            aetna-aetnahmodeductibleplancamembersonly,
-                            aetna-aetnamanagedchoiceposopenaccess,     
-                            aetna-aetnavitalidadpluscaconaetna,  
-                            aetna-aetnachoiceposopenaccess,
-                            aetna-aetnamdbronzesilverandgoldhmo">Aetna</option>
+                      
 
                             <option value="anthem-antheminpathwayxbronzedirectcacahix, 
                             anthem-anthemcopathwayxenhancedinddirectaccess, 
@@ -128,6 +159,15 @@
                             anthem-anthempathwayxtierhosphealthkeepersdirectaccessva, 
                             anthem-anthemppo">Anthem</option>
 
+
+                            <option value="bluecrossblueshieldofgeorgia-bcbsgadirectaccesswhsa, 
+                            bluecrossblueshieldofgeorgia-bcbsgabluechoiceppo, 
+                            bluecrossblueshieldofgeorgia-bcbsgablueopenaccesspos, 
+                            bluecrossblueshieldofgeorgia-bcbsgadentalcomplete, 
+                            bluecrossblueshieldofgeorgia-bcbsgabluechoicehmo, 
+                            bluecrossblueshieldofgeorgia-bcbsgabluechoiceoptionpos">
+                                Blue Cross Blue Shield Georgia</option>
+
                             <option value="healthnet-healthnetcaindividualfamilyppo,
                             healthnet-healthnetcacoveredcaliforniapposmallgroup,
                             healthnet-healthnetazppopos,
@@ -148,12 +188,7 @@
                             healthnet-healthnetorppo">
                                 Healthnet</option>
 
-                            <option value="unitedhealthcare-uhcoptionsppo, 
-                            unitedhealthcare-uhcnavigatehmo, 
-                            unitedhealthcare-uhcmedicachoice, 
-                            unitedhealthcare-uhcnavigatepos, 
-                            unitedhealthcare-uhcchoicepluspos">
-                                United Healthcare</option>
+                          
 
                             <option value="humana-humanawacohmoxhix,
                             humana-humanatampabaycorenet,
@@ -181,21 +216,8 @@
                                 Humana
                             </option>
 
-                            <option value="cigna-cignappo,
-                            cigna-cignahmo,
-                            cigna-cignaopenaccessplus,
-                            cigna-cignalocalplus,
-                            cigna-vision">
-                                Cigna
-                            </option>
+                          
 
-                            <option value="bluecrossblueshieldofgeorgia-bcbsgadirectaccesswhsa, 
-                            bluecrossblueshieldofgeorgia-bcbsgabluechoiceppo, 
-                            bluecrossblueshieldofgeorgia-bcbsgablueopenaccesspos, 
-                            bluecrossblueshieldofgeorgia-bcbsgadentalcomplete, 
-                            bluecrossblueshieldofgeorgia-bcbsgabluechoicehmo, 
-                            bluecrossblueshieldofgeorgia-bcbsgabluechoiceoptionpos">
-                                Blue Cross Blue Shield Georgia</option>
 
 
 
@@ -204,15 +226,16 @@
 
                     </div>
 
-                    <div class=col-3">
+                    <div class=col-3>
                         <label for="city">City</label>
                         <!-- id="city-input" -->
                         <input type="city" class="form-control" id="city-input">
                     </div>
+
                     <div class="col-3">
                         <label for="state">State</label>
                         <!-- id="state-input" -->
-                        <select class="form-control" id="state-input">
+                        <select class="form-control selectpicker" id="state-input">
                             <!-- examples -->
                             <option value="AK">Alaska</option>
                             <option value="AL">Alabama</option>
@@ -269,17 +292,23 @@
                         </select>
                     </div>
 
+
                 </div>
 
+               
+
+
                 <div class="form-row">
+
+                        
                     <div class="col">
                         <!-- drop down form *might* be the best format for this depending on how many specialities are offered by the API -->
                         <label for="specialty">Specialty</label>
                         <!-- id="specialty-input" -->
-                        <select class="form-control" id="specialty-input">
+                        <select class="form-control selectpicker" id="specialty-input">
                             <!-- examples -->
                             <!-- ADD VALUES once we establish the full list -->
-                            <option value="">Show All</option>
+                            <option value=" ">Show All</option>
                             <option value="dermatologist">Dermatology</option>
                             <option value="physical-therapist">Physical Therapy</option>
                             <option value="dentist">Dentistry</option>
@@ -293,12 +322,12 @@
 
 
                         </select>
-                    </div>
-
+                    </div>     
+                 
                     <div class="col">
                         <label for="submit">Find Your Doctor!</label>
                         <br>
-                        <button type="submit" class="btn btn-primary" id="clickme">Submit</button>
+                        <button type="submit" class="btn" id="clickme">Submit</button>
                     </div>
                 </div>
             </div>
@@ -308,13 +337,13 @@
 
         <div class="row">
             <div class="col">
-                <div class="card results">
+                <div class="card results resultscard">
 
-                    <div class="card-header">
-                        <h5>Doctors</h5>
+                    <div class="card-header results_main text-center">
+                        <h4>results <i class="fa fa-list-ul" style="font-size:24px"></i></h4>
                     </div>
 
-                    <div class = "container " id="docs-appear-here">
+                    <div class="container " id="docs-appear-here">
                         <table class="table ">
 
                             <tr>
@@ -330,7 +359,7 @@
                         
                         <img class = 'thedocs col-2' src=" https://asset2.betterdoctor.com/images/54bf21914214f84e79000326-2_thumbnail.jpg">
 
-                        <div class="col"> and graduated in 1999. He completed his internship at St. Vincent’s Medical Center in Jacksonville, FL
+                        <div class="col docbiotext"> and graduated in 1999. He completed his internship at St. Vincent’s Medical Center in Jacksonville, FL
                              and his residency at Greenville Memorial Hospital in Greenville, SC. Dr. Gould also has a fellowship from 
                              the International Academy of Medical Acupuncture. He graduated cum laude with his undergraduate Bachelor’s 
                              degree in marine science and biology and has a Masters degree in Oceanography. Dr. Gould provides complete 
@@ -343,8 +372,11 @@
 
                         </div> -->
 
-</div>
-                    
+                </div>
+
+            </div>
+
+        </div>
 
 
 
@@ -353,21 +385,37 @@
 
 
 
-                <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-                <script type="text/javascript"
-                    src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/2.0.0/handlebars.min.js"></script>
 
 
+
+                <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+                    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+                    crossorigin="anonymous"></script>
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+                    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+                    crossorigin="anonymous"></script>
                 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
                     integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
                     crossorigin="anonymous"></script>
 
 
+
+
+
                 <script
-                    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAxqUekZhoGLhnTT57LPgjezVUPWx02C0M&callback=myMap"></script>
+                    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAxqUekZhoGLhnTT57LPgjezVUPWx02C0M"></script>
+
+                <!-- Latest compiled and minified JavaScript -->
+                <script
+                    src="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.9/dist/js/bootstrap-select.min.js"></script>
+
+                <script src="https://code.jquery.com/jquery-3.4.1.js"
+                    integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
 
 
                 <script src="script.js"></script>
+
+                 <script src="patientData.js"></script>
 
 
 

@@ -40,6 +40,9 @@ $("#clickme").click(function () {
 
     event.preventDefault();
 
+    $(".resultscard").show(1000);
+
+
 
     var api_key = '3100b109c4a9e2fdf5b47a749eb32965';
 
@@ -55,12 +58,15 @@ $("#clickme").click(function () {
 
     // specialty
 
-    var specialty = $("#specialty-input option:selected").val().toLowerCase();
+    var specialty = $("#specialty-input option:selected").val().trim().toLowerCase();
 
     // insurance try?
 
 
-    var insurance = $("#provider-input option:selected").val().toLowerCase();
+
+    var insurance = $("#provider-input option:selected").val().trim().toLowerCase();
+
+    
 
     // user location
 
