@@ -173,11 +173,12 @@ $("#clickme").click(function () {
                 var doctor_address_state = response.data[i].practices[0].visit_address.state;
                 var doctor_address_street = response.data[i].practices[0].visit_address.street;
                 var doctor_address_zip = response.data[i].practices[0].visit_address.zip;
-                var doctor_address_full = (doctor_address_city + " " + doctor_address_state + " " + doctor_address_street + " " + doctor_address_zip);
+                var doctor_address_full = (doctor_address_street +  " " + doctor_address_city + " "  + doctor_address_state + " " + doctor_address_zip);
                 var doctor_address_url = doctor_address_full.replace(/\s+/g, '+')
                 var doctor_phone = response.data[i].practices[0].phones[0].number;
                 var doctor_profile = response.data[i].profile.bio;
                 var doc_photo_link = response.data[i].profile.image_url;
+             
 
 
 
