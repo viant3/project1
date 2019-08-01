@@ -112,6 +112,49 @@ display: none;
 
 }
 
+.sponsor-header {
+    background-color: rgb(253, 255, 139);
+    text-align: center;
+    font-size: 93%;
+    font-weight: 600;
+    border: none;
+}
+
+.mute {
+    font-size: 70%;
+    font-weight: 100;
+    margin-right: 0;
+}
+
+
+.sponsor-card {
+   
+    color: #222;
+    border: none;
+    text-align: center;
+    font-size: 93%;
+    font-weight: 600;
+   
+}
+
+
+.mantis-pic {
+    margin-top: 0;
+    float: left;
+    width: 180px;
+}
+
+.mantis-bio {
+    margin-top: 1%;
+}
+
+
+.mantis-map {
+    height: 100%;
+    width: 100%;
+    padding: 0;
+}
+
 /* this is the color of what is selected in the dropdown */
 
 .dropdown-item.active, .dropdown-item:active {
