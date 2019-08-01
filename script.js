@@ -20,15 +20,8 @@ $.ajax({
         plansString = JSON.stringify(plans);
 
         console.log(plansString);
-
-
-
     }
-
-
-
 });
-
 
 
 
@@ -36,13 +29,9 @@ $.ajax({
 
 $("#clickme").click(function () {
 
-    
-
     event.preventDefault();
 
     $(".resultscard").show(1000);
-
-
 
     var api_key = '3100b109c4a9e2fdf5b47a749eb32965';
 
@@ -62,12 +51,9 @@ $("#clickme").click(function () {
 
     // insurance try?
 
-
-
     var insurance = $("#provider-input option:selected").val().toLowerCase();
 
     
-
     // user location
 
     var user_location = '';
@@ -96,19 +82,12 @@ $("#clickme").click(function () {
 
     }
 
-
-
     console.log(resource_url);
-
 
     // clearing the results before 
 
     $(".thedocs").remove();
    
-
-
-
-
 
     $.ajax({
         url: resource_url,
@@ -116,18 +95,13 @@ $("#clickme").click(function () {
     }).then(function (response) {
 
 
-
         var count = response.meta.count;
 
         console.log("this is the count: " + count);
 
         if (count === 0) {
-
-          
-
-
-            var tr = $("<tr>");
-
+  
+          var tr = $("<tr>");
 
             var docTd = $("<td class = 'thedocs' >").text("no doctors to show");
 
