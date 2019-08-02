@@ -67,6 +67,7 @@ Users can choose insurance, specialities, and state from a simple drop down menu
 
 [<img src="https://i.gyazo.com/f2b5adc99b5b77450fc670873f5a39d6.png">](https://i.gyazo.com/f2b5adc99b5b77450fc670873f5a39d6.png)
 
+[<img src="https://media.giphy.com/media/QWGRj8q7taWYFdjLK5/giphy.gif">](https://media.giphy.com/media/QWGRj8q7taWYFdjLK5/giphy.gif)
 
 
 
