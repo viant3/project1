@@ -24,6 +24,7 @@ var insuranceDisplay = insurance.split(/\s(.+)/)[0];
 var specialty = $("#specialty-input option:selected").val().toLowerCase();
 var city = $("#city-input").val().trim().replace(' ', '-').toLowerCase();
 var state = $("#state-input option:selected").val().toLowerCase();
+var dateAdded = moment().format("MMM Do YYYY, h:mm a");
 
 
   // Code for "Setting values in the database"
@@ -32,7 +33,7 @@ var state = $("#state-input option:selected").val().toLowerCase();
     specialty: specialty,
     city: city,
     state: state,
-    dateAdded: firebase.database.ServerValue.TIMESTAMP
+    dateAdded: dateAdded
   };
 
   database.ref().push(newPatient);
